@@ -1,0 +1,24 @@
+C++ é uma linguagem de programação que suporta o paradigma de programação orientada a objetos (OOP). Isso significa que você pode 
+usar conceitos como classes, objetos, encapsulamento, herança e polimorfismo para escrever programas.
+
+Aqui estão alguns conceitos-chave da orientação a objetos em C++:
+
+  Classe: Uma classe é um tipo de estrutura de dados definida pelo programador. Ela serve como um modelo para criar objetos. 
+A classe define os atributos e métodos que os objetos de sua classe terão.
+
+  Objeto: Um objeto é uma instância de uma classe. Ele é uma entidade concreta que possui seus próprios dados (atributos) 
+e comportamentos (métodos).
+
+  Encapsulamento: É o conceito de agrupar dados e os métodos que operam nesses dados em uma única unidade, ou seja, em um 
+objeto. Isso ajuda a esconder os detalhes internos de como os objetos funcionam, fornecendo uma interface clara para interagir
+com eles.
+
+  Herança: É um mecanismo em que uma classe pode herdar atributos e métodos de outra classe. Isso permite a reutilização de 
+código e a criação de hierarquias de classes.
+
+  Polimorfismo: É a capacidade de objetos de diferentes classes responderem ao mesmo método de maneira diferente. Isso permite 
+que um método seja chamado de forma genérica, mas que seu comportamento varie dependendo do tipo de objeto que o está implementando.
+
+  Abstração: É o processo de identificar as características essenciais de um objeto e ignorar os detalhes não essenciais. 
+As classes em C++ fornecem um nível de abstração ao permitir que os programadores criem tipos de dados personalizados que
+representam entidades do mundo real.
