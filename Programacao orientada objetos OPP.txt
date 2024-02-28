@@ -5,19 +5,20 @@ Aqui estão alguns conceitos-chave da orientação a objetos em C++:
 
   Classe: Uma classe é um tipo de estrutura de dados definida pelo programador. Ela serve como um modelo para criar objetos. 
 A classe define os atributos e métodos que os objetos de sua classe terão.
-
   Objeto: Um objeto é uma instância de uma classe. Ele é uma entidade concreta que possui seus próprios dados (atributos) 
 e comportamentos (métodos).
+  Por exemplo: pode ter uma class 'Carro' que define os atributos e comportamentos comuns a todos os carros, e entao pode criar objetos individuais desse tipo, como um carro especifico.
 
-  Encapsulamento: É o conceito de agrupar dados e os métodos que operam nesses dados em uma única unidade, ou seja, em um 
-objeto. Isso ajuda a esconder os detalhes internos de como os objetos funcionam, fornecendo uma interface clara para interagir
-com eles.
+  Encapsulamento: É o conceito de agrupar dados (atribuidos) e os métodos (funcoes) que operam nesses dados em uma única unidade, ou seja, em um classe. Isso ajuda a esconder os detalhes internos de como os objetos funcionam, fornecendo uma interface clara para interagir com eles.
+  Em C++ pode especificar quais menbros de uma classe sao publicos, privados ou protegido, contrulando assim o acesso aos dados. 
 
   Herança: É um mecanismo em que uma classe pode herdar atributos e métodos de outra classe. Isso permite a reutilização de 
 código e a criação de hierarquias de classes.
+  Permite que uma calsse (subclasse ou classe derivada) herde atributos e metodos de outra calsse (superclasse ou classe base). Isso promove a reutilizacao de codigo e a organizacao hierarquica de classes.
 
   Polimorfismo: É a capacidade de objetos de diferentes classes responderem ao mesmo método de maneira diferente. Isso permite 
 que um método seja chamado de forma genérica, mas que seu comportamento varie dependendo do tipo de objeto que o está implementando.
+  E a capacidade de objetos de classes diferentes responderem ao mesmo metodo de maneira diferente. isso pode ser alcansado por meio de funcoes virtuais e sobrescrita de metodos.
 
   Abstração: É o processo de identificar as características essenciais de um objeto e ignorar os detalhes não essenciais. 
 As classes em C++ fornecem um nível de abstração ao permitir que os programadores criem tipos de dados personalizados que
