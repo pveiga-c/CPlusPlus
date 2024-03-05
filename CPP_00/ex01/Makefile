@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: correia <correia@student.42.fr>            +#+  +:+       +#+         #
+#    By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/02 10:01:44 by correia           #+#    #+#              #
-#    Updated: 2024/03/04 10:14:50 by correia          ###   ########.fr        #
+#    Updated: 2024/03/05 20:04:24 by pveiga-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME	=	PhoneBook
 
 CPP		=	c++
 
-SRCS	=	PhoneBook.cpp main.cpp
+SRCS	=	PhoneBook.cpp main.cpp Contact.cpp
 
 OBJS	=	$(SRCS:.cpp=.o)
 
@@ -38,5 +38,5 @@ fclean:		clean
 
 re:			fclean $(NAME)
 
-v1:
+v:
 			clear && make re && valgrind ./$(NAME)

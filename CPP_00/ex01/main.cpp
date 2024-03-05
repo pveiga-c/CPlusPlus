@@ -3,27 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/03 11:51:17 by correia           #+#    #+#             */
-/*   Updated: 2024/03/04 10:12:18 by correia          ###   ########.fr       */
+/*   Updated: 2024/03/05 19:10:20 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-int main (int argc, char **argv)
+int main ()
 {
 	std::string	command;
 	PhoneBook	phoneBook;
 	
-	(void)argv;
-	if(argc != 1)
-	{
-		std::cout << "The PhoneBook does not support arguments" << std::endl;
-		std::cout << "To start is: ./PhoneBook" << std::endl;
-		return (0);
-	}
 	std::cout << "		Welcome to your PhoneBook" << std::endl << std::endl;
 	while(1)
 	{	
@@ -34,18 +27,19 @@ int main (int argc, char **argv)
 		std::cout << std::endl;
 		std::cout << "Comand : ";
 
-		std::cin >> command;
-		
-		if(command == "ADD")
-			phoneBook.saveContact();
-		else if(command == "SEARCH")
+		getline(std::cin, command);
+		system("clear");
+		if(command.compare("ADD") == 0)
+			phoneBook.writeContact();
+		else if(command.compare("SEARCH") == 0)
 			phoneBook.searchContact();
-		else if (command == "EXIT")
+		else if (command.compare("EXIT") == 0)
 		{
 			phoneBook.exit();
 			break;
 		}
-		else if (command != "ADD" || command != "SEARCH" || command != "EXIT")
+		else if (command.compare("ADD") != 0 || command.compare("SEARCH") != 0 || command.compare("EXIT") != 0)
 			std::cout << "The command \"" << command << "\" is invalid." << std::endl << std::endl;
+		std::cin.clear();
 	}
 }

@@ -1,39 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/03 12:25:11 by correia           #+#    #+#             */
-/*   Updated: 2024/03/05 19:54:32 by pveiga-c         ###   ########.fr       */
+/*   Created: 2024/03/04 16:25:35 by pveiga-c          #+#    #+#             */
+/*   Updated: 2024/03/05 19:58:53 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef CONTACT_HPP
+#define CONTACT_HPP
 
-#include <iomanip>
 #include <iostream>
-#include <stdlib.h>
-#include <cstdlib>
 #include <string>
-#include "Contact.hpp"
+// #include "PhoneBook.hpp"
 
-class PhoneBook
+class Contact
 {
-	private:
-		Contact contacts[8];
-		int index;
-		
+	private:	
+		std::string	firstName;
+		std::string	lastName;
+		std::string nickName;
+		std::string	phoneNumber;
+		std::string	darkestSecret;
 	public:
-		PhoneBook();
-		~PhoneBook();
-
-		//void saveContact();
-		void writeContact();
-		void searchContact();
-		void exit();
+		Contact();
+		~Contact();
+		void	saveContact(int index, std::string cmd);
 };
 
 #endif

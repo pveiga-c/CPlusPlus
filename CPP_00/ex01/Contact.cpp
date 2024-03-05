@@ -1,39 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/03 12:25:11 by correia           #+#    #+#             */
-/*   Updated: 2024/03/05 19:54:32 by pveiga-c         ###   ########.fr       */
+/*   Created: 2024/03/04 16:25:39 by pveiga-c          #+#    #+#             */
+/*   Updated: 2024/03/05 20:00:25 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
-
-#include <iomanip>
-#include <iostream>
-#include <stdlib.h>
-#include <cstdlib>
-#include <string>
 #include "Contact.hpp"
 
-class PhoneBook
+Contact::Contact()
 {
-	private:
-		Contact contacts[8];
-		int index;
-		
-	public:
-		PhoneBook();
-		~PhoneBook();
+}
+Contact::~Contact()
+{
+}
 
-		//void saveContact();
-		void writeContact();
-		void searchContact();
-		void exit();
-};
-
-#endif
+void	Contact::saveContact(int index, std::string cmd)
+{
+	if(index == 0)
+		this->firstName = cmd;
+	if(index == 1)
+		this->lastName = cmd;
+	if(index == 2)
+		this->nickName = cmd;
+	if(index == 3)
+		this->phoneNumber = cmd;
+	if(index == 4)
+		this->darkestSecret = cmd;
+}
