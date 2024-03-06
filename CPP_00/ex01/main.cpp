@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/03 11:51:17 by correia           #+#    #+#             */
-/*   Updated: 2024/03/05 19:10:20 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/03/06 19:10:30 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int main ()
 	std::string	command;
 	PhoneBook	phoneBook;
 	
+	system("clear");
 	std::cout << "		Welcome to your PhoneBook" << std::endl << std::endl;
 	while(1)
 	{	

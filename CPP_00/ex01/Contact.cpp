@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 16:25:39 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/03/06 09:38:43 by correia          ###   ########.fr       */
+/*   Updated: 2024/03/06 17:47:40 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,31 +19,31 @@ Contact::~Contact()
 {
 }
 
-void	Contact::saveContact(int index, std::string cmd)
+void	Contact::saveContact(int i, std::string cmd)
 {
-	if(index == 0)
+	if(i == 0)
 		this->firstName = cmd;
-	if(index == 1)
+	if(i == 1)
 		this->lastName = cmd;
-	if(index == 2)
+	if(i == 2)
 		this->nickName = cmd;
-	if(index == 3)
+	if(i == 3)
 		this->phoneNumber = cmd;
-	if(index == 4)
+	if(i == 4)
 		this->darkestSecret = cmd;
 }
 
-std::string Contact::readString(int index)
+std::string Contact::readString(int i)
 {
-	if(index == 0)
+	if(i == 0)
 		return this->firstName;
-	if(index == 1)
+	if(i == 1)
 		return this->lastName;
-	if(index == 2)
+	if(i == 2)
 		return this->nickName;
-	if(index == 3)
+	if(i == 3)
 		return this->phoneNumber;
-	if(index == 4)
+	if(i == 4)
 		return this->darkestSecret;
 	return NULL;
 }
