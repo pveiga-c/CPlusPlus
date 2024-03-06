@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 16:25:39 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/03/05 20:00:25 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/03/06 09:38:43 by correia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,19 @@ void	Contact::saveContact(int index, std::string cmd)
 		this->phoneNumber = cmd;
 	if(index == 4)
 		this->darkestSecret = cmd;
+}
+
+std::string Contact::readString(int index)
+{
+	if(index == 0)
+		return this->firstName;
+	if(index == 1)
+		return this->lastName;
+	if(index == 2)
+		return this->nickName;
+	if(index == 3)
+		return this->phoneNumber;
+	if(index == 4)
+		return this->darkestSecret;
+	return NULL;
 }

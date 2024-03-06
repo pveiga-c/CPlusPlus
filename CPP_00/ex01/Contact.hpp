@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 16:25:35 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/03/05 19:58:53 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/03/06 09:38:38 by correia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ class Contact
 		Contact();
 		~Contact();
 		void	saveContact(int index, std::string cmd);
+		std::string readString(int index);
+
 };
 
 #endif

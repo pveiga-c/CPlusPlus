@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/03 11:51:05 by correia           #+#    #+#             */
-/*   Updated: 2024/03/05 20:04:57 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/03/06 09:38:28 by correia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,44 +48,47 @@ void	PhoneBook::writeContact()
 	system("clear");
 }
 
-// void	PhoneBook::saveContact()
-// {
-	// std::string firstName, lastName, nickName, phoneNumber, darkestSecret;
-	
-	// std::cout << "	INSERT" << std::endl;
-	// std::cout << "First Name    :  ";
-	// std::cin >> firstName;
-
-	// std::cout << "Last Name     :  ";
-	// std::cin >> lastName;
-	
-	// std::cout << "Nick Name     :  ";
-	// std::cin >> nickName;
-	
-	// std::cout << "Phone Number  :  ";
-	// std::cin >> phoneNumber;
-
-	// std::cout << "Darkest Secret:  ";
-	// std::cin >> darkestSecret;
-
-	// if(index > 8)
-	// 	index = 1;
-	// contacts[] (index, firstName, lastName, nickName, phoneNumber, darkestSecret);
-	// (index)++;
-	
-	// std::cout << std::endl;
-	// std::cout << std::endl;
-	// std::cout << "INPUT:" << std::endl;
-	// std::cout << firstName << lastName <<std::endl;
-	// std::cout << nickName << std::endl;
-	// std::cout << phoneNumber << std::endl;
-	// std::cout << darkestSecret << std::endl;
-//}
-
 void	PhoneBook::searchContact()
 {
-	std::cout << "SEARCH " << std::endl;
+	int i = 0;
+	int j = 0;
+	std::cout << "|     index|first name| last name| nick name| " << std::endl;
+
+	while(i < 8)
+	{
+		/* if(contacts[i].readString(0).size() == 0)
+			break; */
+		std::cout << "|         " << i << "|";
+		while(j < 3)
+		{
+			if(contacts[i].readString(i).size() > 10)
+			{
+				std::cout << std::setw(9) << contacts[i].readString(i);
+				std::cout << std::setw(1) << ".";
+			}
+			std::cout << std::setfill(' ') << std::setw(10);
+			std::cout << contacts[i].readString(i);
+			std::cout << "|";
+			j++;
+		}
+		std::cout << std::endl;
+		i++;
+	}
+
+
+
+
+
+
+
+
+
+	
 }
+
+
+
+
 
 void	PhoneBook::exit()
 {
