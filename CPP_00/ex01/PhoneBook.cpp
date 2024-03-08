@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/03 11:51:05 by correia           #+#    #+#             */
-/*   Updated: 2024/03/06 19:33:57 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/03/08 09:57:51 by correia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ void	PhoneBook::writeContact()
 			std::cout << "Darkest Secret:  ";
 		
 		getline(std::cin, cmd);
+		if (std::cin.eof())
+			return;
 		contacts[index].saveContact(i, cmd);
 	}
 	index++;
@@ -51,24 +53,27 @@ void	PhoneBook::writeContact()
 
 void	PhoneBook::searchContact()
 {
-	PhoneBook::printTable();
-
+	
 	int op = 0;
 	int j;
+
 	std::string option;
+
+	PhoneBook::printTable();
+
 	while(1)
-	{	
-		std::cout << std::endl;
-		std::cout << "Enter the index you want to view: (1 to 8)" << std::endl;
-		std::cout << "Or 9 to return to the initial menu" << std::endl;
-		
+	{
 		std::getline(std::cin, option);
 		std::stringstream buf(option);
 		buf >> op;
-	
+		
+		if (std::cin.eof())
+			return;
+		j = 0;
 		if(op > 0 && op < 9 && op - 1 < index)
 		{
-			j = 0;
+			PhoneBook::printTable();
+			
 			while(j < 5)
 			{
 				if(j == 0)
@@ -82,8 +87,10 @@ void	PhoneBook::searchContact()
 				else if(j == 4)
 					std::cout << "Darkest Secret: ";
 				std::cout << contacts[op - 1].readString(j) << std::endl;
+				
 				j++;
 			}	
+			std::cout << std::endl << "Enter another index: ";
 		}
 		else if (op == 9)
 		{
@@ -92,12 +99,19 @@ void	PhoneBook::searchContact()
 		}
 		else if(op > 0 && op < 9 && op > index)
 		{
+			PhoneBook::printTable();
 			std::cout << "The contact is empty." << std::endl;
+			std::cout << "Enter another index: ";
+
 		}
 		else 
 		{
+			PhoneBook::printTable();
 			std::cout << "Invalid Index. " << std::endl;
+			std::cout << "Enter another index: ";
+			
 		}
+
 	}
 	
 }
@@ -106,7 +120,8 @@ void	PhoneBook::printTable()
 {
 	int i = 0;
 	int j;
-		
+
+	system("clear");
 	std::cout << "|     index|first name| last name| nick name| " << std::endl;
 
 	while(i < 8)
@@ -119,11 +134,11 @@ void	PhoneBook::printTable()
 		{
 			if(contacts[i].readString(j).size() > 10)
 			{
-				std::cout << std::setw(9) << contacts[i].readString(j);
+				std::cout << std::setw(9) << contacts[i].readString(j).substr(0,9);
 				std::cout <<  "." << std::setw(1);
 			}
 			else
-			{	
+			{   
 				std::cout << std::setfill(' ') << std::setw(10);
 				std::cout << contacts[i].readString(j);
 			}
@@ -133,7 +148,13 @@ void	PhoneBook::printTable()
 		std::cout << std::endl;
 		i++;
 	}
+	std::cout << std::endl;
+	std::cout << "Enter the index you want to view: (1 to 8)" << std::endl;
+	std::cout << "Or 9 to return to the initial menu" << std::endl;
+	std::cout << std::endl;
+	
 }
+
 
 void	PhoneBook::exit()
 {

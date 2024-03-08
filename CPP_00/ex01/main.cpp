@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/03 11:51:17 by correia           #+#    #+#             */
-/*   Updated: 2024/03/06 19:10:30 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/03/08 09:59:45 by correia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int main ()
 
 		getline(std::cin, command);
 		system("clear");
+		if (std::cin.eof())
+			break;
 		if(command.compare("ADD") == 0)
 			phoneBook.writeContact();
 		else if(command.compare("SEARCH") == 0)
