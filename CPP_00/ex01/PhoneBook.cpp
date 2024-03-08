@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/03 11:51:05 by correia           #+#    #+#             */
-/*   Updated: 2024/03/08 09:57:51 by correia          ###   ########.fr       */
+/*   Updated: 2024/03/08 18:18:32 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
-#include "stdio.h"
 
 PhoneBook::PhoneBook()
 {
@@ -45,7 +44,13 @@ void	PhoneBook::writeContact()
 		getline(std::cin, cmd);
 		if (std::cin.eof())
 			return;
-		contacts[index].saveContact(i, cmd);
+		if(cmd.empty() || cmd.find_first_not_of(" \t") == std::string::npos)
+		{
+			std::cout << "The field cannot be empty." << std::endl;
+			i--;
+		}
+		else
+			contacts[index].saveContact(i, cmd);
 	}
 	index++;
 	system("clear");
@@ -60,7 +65,6 @@ void	PhoneBook::searchContact()
 	std::string option;
 
 	PhoneBook::printTable();
-
 	while(1)
 	{
 		std::getline(std::cin, option);
@@ -70,7 +74,7 @@ void	PhoneBook::searchContact()
 		if (std::cin.eof())
 			return;
 		j = 0;
-		if(op > 0 && op < 9 && op - 1 < index)
+		if(op > 0 && op < 9 && !contacts[op - 1].readString(0).empty())
 		{
 			PhoneBook::printTable();
 			
@@ -97,9 +101,10 @@ void	PhoneBook::searchContact()
 			system("clear");
 			return ;
 		}
-		else if(op > 0 && op < 9 && op > index)
+		else if(op > 0 && op < 9 && contacts[op - 1].readString(0).empty())
 		{
 			PhoneBook::printTable();
+	
 			std::cout << "The contact is empty." << std::endl;
 			std::cout << "Enter another index: ";
 
@@ -120,6 +125,7 @@ void	PhoneBook::printTable()
 {
 	int i = 0;
 	int j;
+	std::string str;
 
 	system("clear");
 	std::cout << "|     index|first name| last name| nick name| " << std::endl;
@@ -132,15 +138,22 @@ void	PhoneBook::printTable()
 		j = 0;
 		while(j < 3)
 		{
-			if(contacts[i].readString(j).size() > 10)
+			str = contacts[i].readString(j);
+			size_t pos = 0;
+			while ((pos = str.find("\t", pos)) != std::string::npos)
 			{
-				std::cout << std::setw(9) << contacts[i].readString(j).substr(0,9);
-				std::cout <<  "." << std::setw(1);
+				str.replace(pos, 1, " ");
+				pos += 1;
+			}
+			if(str.size() > 10)
+			{
+				std::cout << std::setw(9) << str.substr(0,9);
+				std::cout << std::setw(1) <<  ".";
 			}
 			else
 			{   
 				std::cout << std::setfill(' ') << std::setw(10);
-				std::cout << contacts[i].readString(j);
+				std::cout << str;
 			}
 			std::cout << "|";
 			j++;

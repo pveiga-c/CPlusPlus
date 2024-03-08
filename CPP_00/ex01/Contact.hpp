@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 16:25:35 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/03/08 09:31:10 by correia          ###   ########.fr       */
+/*   Updated: 2024/03/08 18:15:12 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 #include <iostream>
 #include <string>
-// #include "PhoneBook.hpp"
 
 class Contact
 {
@@ -30,9 +29,6 @@ class Contact
 		~Contact();
 		void	saveContact(int index, std::string cmd);
 		std::string readString(int index);
-		void	trimString(std::string &str);
 };
-
-
 
 #endif
