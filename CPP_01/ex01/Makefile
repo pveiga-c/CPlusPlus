@@ -5,16 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/03/02 10:01:44 by correia           #+#    #+#              #
-#    Updated: 2024/03/12 11:24:47 by pveiga-c         ###   ########.fr        #
+#    Created: 2024/03/02 09:02:24 by correia           #+#    #+#              #
+#    Updated: 2024/03/11 16:28:53 by pveiga-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	PhoneBook
+NAME	=	megaphone
 
 CXX		=	c++
 
-SRCS	=	PhoneBook.cpp main.cpp Contact.cpp
+SRCS	=	megaphone.cpp
 
 OBJS	=	$(SRCS:.cpp=.o)
 

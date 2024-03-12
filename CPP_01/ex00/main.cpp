@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/04 16:25:35 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/03/12 11:38:37 by pveiga-c         ###   ########.fr       */
+/*   Created: 2024/03/12 11:56:54 by pveiga-c          #+#    #+#             */
+/*   Updated: 2024/03/12 14:21:53 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP
-#define CONTACT_HPP
+#include "Zombie.hpp"
 
-#include <iostream>
-
-class Contact
+int main()
 {
-	private:
-		std::string	firstName;
-		std::string	lastName;
-		std::string nickName;
-		std::string	phoneNumber;
-		std::string	darkestSecret;
-	public:
-		Contact();
-		~Contact();
-		void	saveContact(int index, std::string cmd);
-		std::string readString(int index);
-};
+	Zombie zombie("Pedro");
+	zombie.announce();
 
-#endif
+	std::cout << std::endl;
+	
+	Zombie* zombie2 = newZombie("joao");
+	// zombie2 = newZombie("joao");
+	zombie2->announce();
+	delete zombie2;
+	
+	std::cout << std::endl;
+
+	randomChump("Nuno");
+	std::cout << std::endl;
+}

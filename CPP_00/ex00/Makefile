@@ -3,32 +3,32 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: correia <correia@student.42.fr>            +#+  +:+       +#+         #
+#    By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/02 09:02:24 by correia           #+#    #+#              #
-#    Updated: 2024/03/02 09:59:19 by correia          ###   ########.fr        #
+#    Updated: 2024/03/12 11:25:20 by pveiga-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	megaphone
 
-CPP		=	c++
+CXX		=	c++
 
 SRCS	=	megaphone.cpp
 
 OBJS	=	$(SRCS:.cpp=.o)
 
-CPPFLAGS=	-Wall -Werror -Wextra -std=c++98
+CXXFLAGS=	-Wall -Werror -Wextra -std=c++98
 
 RM		=	rm -rf
 
 all	:		$(NAME)
 
 $(NAME) :	$(OBJS)
-			@$(CPP) $(CPPFLAGS) $(OBJS) -o $(NAME)
+			@$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 %.o: %.cpp
-			@$(CPP) $(CPPFLAGS) -c -o $@ $<
+			@$(CXX) $(CXXFLAGS) -c -o $@ $<
 
 clean:			
 			@$(RM) $(OBJS)
