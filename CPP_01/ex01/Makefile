@@ -6,15 +6,17 @@
 #    By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/02 09:02:24 by correia           #+#    #+#              #
-#    Updated: 2024/03/11 16:28:53 by pveiga-c         ###   ########.fr        #
+#    Updated: 2024/03/12 15:33:30 by pveiga-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	megaphone
+NAME	=	zombieHorbe
 
 CXX		=	c++
 
-SRCS	=	megaphone.cpp
+SRCS	=	main.cpp \
+			Zombie.cpp \
+			zombieHorde.cpp
 
 OBJS	=	$(SRCS:.cpp=.o)
 

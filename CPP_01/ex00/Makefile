@@ -6,7 +6,7 @@
 #    By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/02 09:02:24 by correia           #+#    #+#              #
-#    Updated: 2024/03/12 14:22:08 by pveiga-c         ###   ########.fr        #
+#    Updated: 2024/03/12 14:43:01 by pveiga-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,8 @@ NAME	=	Zombie
 CXX		=	c++
 
 SRCS	=	main.cpp \
+			newZombie.cpp \
+			randomChump.cpp \
 			Zombie.cpp
 
 OBJS	=	$(SRCS:.cpp=.o)

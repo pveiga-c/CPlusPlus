@@ -5,17 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/12 11:29:03 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/03/12 14:41:15 by pveiga-c         ###   ########.fr       */
+/*   Created: 2024/03/12 14:55:19 by pveiga-c          #+#    #+#             */
+/*   Updated: 2024/03/12 16:20:39 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string name)
+void	Zombie::passedName(std::string str) 
 {
-	this->name = name;
-	std::cout << this->name << " was created." << std::endl;
+	this->name = str;
+}
+
+Zombie::Zombie()
+{
+	std::cout << "Zombie was created." << std::endl;
 }
 Zombie::~Zombie()
 {
