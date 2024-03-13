@@ -6,12 +6,11 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 14:54:07 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/03/13 12:00:54 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/03/13 13:54:13 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
-#include <stdio.h>
 
 int main(int argc, char **argv)
 {
@@ -19,12 +18,15 @@ int main(int argc, char **argv)
 	std::string nameZombies;
 	(void)argv;
 	
+	if(argc != 1)
+	{
+		std::cout << "Invalid number Arguments." << std::endl;
+		return (0);
+	}
+		
 	std::cout << "Enter the number of zombies: ";
 	std::cin >> numberZombies;
 	
-	if(argc != 1)
-		std::cout << "Invalid number Arguments." << std::endl;
-		
 	while(true)
 	{
 		if(numberZombies < 0 || std::cin.fail())
@@ -47,11 +49,5 @@ int main(int argc, char **argv)
 	{
 		newHorde[i].announce();
 	}
-	// else
-	// {
-	// 	std::cout << "Invalid Arguments." << std::endl;
-	// }
-	
-	
-	
+	delete[] newHorde;
 }

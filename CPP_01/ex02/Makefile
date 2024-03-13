@@ -6,17 +6,15 @@
 #    By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/02 09:02:24 by correia           #+#    #+#              #
-#    Updated: 2024/03/13 12:14:03 by pveiga-c         ###   ########.fr        #
+#    Updated: 2024/03/13 13:48:00 by pveiga-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	zombieHorbe
+NAME	=	HI_THIS_IS_BRAIN
 
 CXX		=	c++
 
 SRCS	=	main.cpp \
-			Zombie.cpp \
-			zombieHorde.cpp
 
 OBJS	=	$(SRCS:.cpp=.o)
 
