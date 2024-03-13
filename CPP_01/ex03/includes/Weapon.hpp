@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/12 14:54:55 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/03/13 14:31:36 by pveiga-c         ###   ########.fr       */
+/*   Created: 2024/03/12 14:54:07 by pveiga-c          #+#    #+#             */
+/*   Updated: 2024/03/13 15:32:21 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
 
 #include <iostream>
 #include <sstream>
 #include <limits>
 
-class Zombie
+class Weapon
 {
-	public:
-		void announce();
-		void passedName(std::string name);
 	private:
-		std::string name;
-		
+		std::string _type;
 	public:
-		Zombie();
-		~Zombie();
-	
-};
+		const	std::string& getTpe();
+		void	setType
+}
 
-Zombie*	zombieHorbe( int N, std::string name);
 
 #endif
