@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 14:54:55 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/03/12 16:17:17 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/03/13 11:23:42 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <sstream>
+#include <limits>
 
 class Zombie
 {
