@@ -6,18 +6,18 @@
 #    By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/02 09:02:24 by correia           #+#    #+#              #
-#    Updated: 2024/03/13 15:21:15 by pveiga-c         ###   ########.fr        #
+#    Updated: 2024/03/15 16:13:25 by pveiga-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	Unnecessary violence
+NAME	=	Unnecessary_violence
 
 CXX		=	c++
 
-SRCS	=	main.cpp \
-			HumanA.cpp \
-			HumanB.cpp \
-			Weapon.cpp
+SRCS	=	src/main.cpp \
+			src/HumanA.cpp \
+			src/HumanB.cpp \
+			src/Weapon.cpp
 
 OBJS	=	$(SRCS:.cpp=.o)
 

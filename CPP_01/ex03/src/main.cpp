@@ -6,13 +6,13 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 14:54:07 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/03/13 15:38:36 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/03/15 16:14:16 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
-#include "HumanB.hpp"
-#include "Weapon.hpp"
+#include "../includes/HumanA.hpp"
+#include "../includes/HumanB.hpp"
+#include "../includes/Weapon.hpp"
 
 int main()
 {
