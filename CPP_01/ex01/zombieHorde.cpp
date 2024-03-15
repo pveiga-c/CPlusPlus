@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 14:54:50 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/03/12 16:19:03 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/03/15 09:21:52 by correia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Zombie*	zombieHorbe( int N, std::string name )
 	
 	for (int i = 0; i < N; i++)
 	{
-		zombieHorbe[i].passedName(name);
+		zombieHorbe[i].setName(name);
 	}
 	return(zombieHorbe);
 

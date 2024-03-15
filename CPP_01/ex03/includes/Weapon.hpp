@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 14:54:07 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/03/13 15:32:21 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/03/15 10:11:40 by correia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,13 @@
 class Weapon
 {
 	private:
-		std::string _type;
+		std::string m_type;
 	public:
+		Weapon();
+		Weapon(std::string newType);
+		~Weapon();
 		const	std::string& getTpe();
-		void	setType
-}
-
+		void	setType(std::string newType);
+};
 
 #endif
