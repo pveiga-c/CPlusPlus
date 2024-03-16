@@ -6,12 +6,13 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 14:54:07 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/03/15 20:30:47 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/03/16 19:24:50 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <fstream>
+#include <string>
 
 bool open_copy_file(std::string file_name, std::ifstream &file_original, std::ofstream &file_replace)
 {
@@ -32,16 +33,28 @@ bool open_copy_file(std::string file_name, std::ifstream &file_original, std::of
 		std::cout << std::endl;
 		return (1);
 	}
-	std::string line;
-	while (std::getline(file_original, line)) {
-		file_replace << line << std::endl;
-	}
-
-	file_original.close();
-	file_replace.close();
+	// file_original.close();
+	// file_replace.close();
 	return (1);
 	
 }
+
+
+void ft_replace_char(std::ifstream &file_original, std::ofstream &file_replace, const std::string &s1, const std::string &s2) {
+	std::string line;
+	
+	while (std::getline(file_original, line, '\0'))
+	{
+		for (size_t pos = 0; (pos = line.find(s1, pos)) != std::string::npos; pos += s2.length()) {
+			line.erase(pos, s1.length());
+			line.insert(pos, s2);
+		}
+		file_replace << line << std::endl;
+	}
+	file_original.close();
+	file_replace.close();
+}
+
 
 int main(int argc, char **argv)
 {
@@ -49,14 +62,17 @@ int main(int argc, char **argv)
 	std::ofstream file_replace;
 
 (void)argc;
-	// if(argc < 3)
-	// {
-	// 	std::cout << "tem que ter 3 argumentos" << std::endl;
-	// 	return (0);
-	// }
+	if(argc < 3)
+	{
+		std::cout << "tem que ter 3 argumentos" << std::endl;
+		return (0);
+	}
 	if(!open_copy_file(argv[1], file_original, file_replace))
 		return (1);
-	
+	// file_original.clear(); // Limpa o estado do fluxo
+	// file_original.seekg(0, std::ios::beg); // Move o indicador de posição no arquivo para o início do arquivo
+	ft_replace_char(file_original, file_replace, argv[2], argv[3]);
+
 
 	return 0;
 }
