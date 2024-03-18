@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 14:54:07 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/03/18 09:44:18 by correia          ###   ########.fr       */
+/*   Updated: 2024/03/18 18:22:16 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,12 @@ class Harl
 		~Harl();
 
 		void	complain ( std::string level );
-		static const int		numInputLevel = 4;
-		std::string levelInput[numInputLevel];
 		
 	private:
+		static const int		numInputLevel = 4;
+		typedef void (Harl::*f_ptr)();
+		std::string levelInput[numInputLevel];
+		f_ptr functionInput[4];
 		void	debug ( void );
 		void	info ( void );
 		void	warning ( void );

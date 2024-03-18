@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: correia <correia@student.42.fr>            +#+  +:+       +#+         #
+#    By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/02 09:02:24 by correia           #+#    #+#              #
-#    Updated: 2024/03/18 09:12:34 by correia          ###   ########.fr        #
+#    Updated: 2024/03/18 18:23:10 by pveiga-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ NAME	=	HARL
 CXX		=	c++
 
 SRCS	=	src/main.cpp \
+			src/Harl.cpp
 			
 OBJS	=	$(SRCS:.cpp=.o)
 
