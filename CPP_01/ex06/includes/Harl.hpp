@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 14:54:07 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/03/18 18:22:16 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/03/19 17:03:56 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,16 @@ class Harl
 		void	complain ( std::string level );
 		
 	private:
-		static const int		numInputLevel = 4;
-		typedef void (Harl::*f_ptr)();
-		std::string levelInput[numInputLevel];
-		f_ptr functionInput[4];
+	
+		static void (Harl::*functionInput[])();
 		void	debug ( void );
 		void	info ( void );
 		void	warning ( void );
 		void	error ( void );
+		void	other( void );
+		
+		static const int		numInputLevel = 4;
+		std::string levelInput[numInputLevel];
 };
 
 #endif

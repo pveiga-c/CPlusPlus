@@ -6,12 +6,14 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 14:54:07 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/03/18 18:29:18 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/03/19 16:57:25 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "../includes/Harl.hpp"
+
+void (Harl::*Harl::functionInput[])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 
 Harl::Harl()
 {
@@ -20,14 +22,6 @@ Harl::Harl()
 	levelInput[1]="INFO";
 	levelInput[2]="WARNING";
 	levelInput[3]="ERROR";
-
-	functionInput[0] = &Harl::debug;
-	functionInput[1] = &Harl::info;
-	functionInput[2] = &Harl::warning;
-	functionInput[3] = &Harl::error;
-
-	
-
 }
 Harl::~Harl()
 {
@@ -35,16 +29,14 @@ Harl::~Harl()
 }
 
 
+
 void	Harl::complain ( std::string level )
 {
-	f_ptr ptr;
-	
 	for (int i = 0; i < 4; i++)
 	{
 		if (levelInput[i] == level)
 		{
-			ptr = this->functionInput[i];
-			(this->*ptr)();
+			(this->*functionInput[i])();
 		}
 	}
 }

@@ -6,11 +6,11 @@
 #    By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/02 09:02:24 by correia           #+#    #+#              #
-#    Updated: 2024/03/18 18:23:10 by pveiga-c         ###   ########.fr        #
+#    Updated: 2024/03/19 17:55:19 by pveiga-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	HARL
+NAME	=	Harl
 
 CXX		=	c++
 
@@ -23,14 +23,15 @@ CXXFLAGS=	-Wall -Werror -Wextra -std=c++98
 
 RM		=	rm -rf
 
-COLOUR_GREEN=\033[1;32m
-COLOUR_END=\033[0m
+COLOUR_BLUE =\033[0;34m
+COLOUR_RED	=\033[0;31m
+COLOUR_END  =\033[0m
 
 all	:		$(NAME)
 
 $(NAME) :	$(OBJS)
 			@$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
-			@echo "$(COLOUR_GREEN) >> $(NAME) is ready to use $(COLOUR_END)"
+			@echo "$(COLOUR_BLUE) >> $(NAME) is ready to use $(COLOUR_END)"
 
 
 %.o: %.cpp
@@ -43,6 +44,8 @@ fclean:		clean
 			@$(RM) $(NAME)
 
 re:			fclean $(NAME)
+			@echo "$(COLOUR_RED) >> $(NAME) clean $(COLOUR_END)"
+
 
 v:
 			clear && make re && valgrind ./$(NAME)

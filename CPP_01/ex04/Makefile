@@ -6,11 +6,11 @@
 #    By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/02 09:02:24 by correia           #+#    #+#              #
-#    Updated: 2024/03/15 19:55:40 by pveiga-c         ###   ########.fr        #
+#    Updated: 2024/03/19 17:56:27 by pveiga-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	SED_IS_FOR_LOSERS
+NAME	=	sedIsForLosers
 
 CXX		=	c++
 
@@ -22,10 +22,15 @@ CXXFLAGS=	-Wall -Werror -Wextra -std=c++98
 
 RM		=	rm -rf
 
+COLOUR_BLUE =\033[0;34m
+COLOUR_RED	=\033[0;31m
+COLOUR_END  =\033[0m
+
 all	:		$(NAME)
 
 $(NAME) :	$(OBJS)
 			@$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+			@echo "$(COLOUR_BLUE) >> $(NAME) is ready to use $(COLOUR_END)"
 
 %.o: %.cpp
 			@$(CXX) $(CXXFLAGS) -c -o $@ $<
@@ -35,6 +40,7 @@ clean:
 
 fclean:		clean
 			@$(RM) $(NAME)
+			@echo "$(COLOUR_RED) >> $(NAME) clean $(COLOUR_END)"
 
 re:			fclean $(NAME)
 
