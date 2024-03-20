@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 11:29:21 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/03/20 16:03:09 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/03/14 12:46:36 by correia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,11 @@ class Zombie
 		//Zombie();
 		Zombie(std::string name = "No name Zombie:");
 		~Zombie();
-		void announce();
 	private:
 		std::string name;
+	
+	public:
+		void announce();
 };
 
 Zombie* newZombie( std::string name );
