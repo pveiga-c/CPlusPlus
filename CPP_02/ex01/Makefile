@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+         #
+#    By: correia <correia@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/02 09:02:24 by correia           #+#    #+#              #
-#    Updated: 2024/03/19 18:32:57 by pveiga-c         ###   ########.fr        #
+#    Updated: 2024/03/25 17:09:03 by correia          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	myFirstClassInOrthodoxCanonicalForm
+NAME	=	towardsAMoreUsefulFixedPointNumberClass
 
 CXX		=	c++
 

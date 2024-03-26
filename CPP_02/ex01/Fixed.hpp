@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/12 14:40:16 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/03/12 14:40:48 by pveiga-c         ###   ########.fr       */
+/*   Created: 2024/03/12 11:29:21 by pveiga-c          #+#    #+#             */
+/*   Updated: 2024/03/25 17:10:13 by correia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
-Zombie* newZombie( std::string name )
+#include "iostream"
+
+class Fixed
 {
-	Zombie* newZombie = new Zombie(name);
-	return(newZombie);
-}
+	private:
+	
+	public:
+};
+
+
+#endif
