@@ -3,17 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 11:29:21 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/03/26 09:39:41 by correia          ###   ########.fr       */
+/*   Updated: 2024/03/27 17:09:09 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
 # define FIXED_HPP
 
-#include "iostream"
+#include <iostream>
+#include <cmath>
 
 class Fixed
 {
@@ -35,5 +36,6 @@ public:
 	int		toInt( void ) const;
 };
 
+std::ostream& operator<<(std::ostream& os, const Fixed& fixed);
 
 #endif
