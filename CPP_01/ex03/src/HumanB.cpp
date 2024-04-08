@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 14:54:07 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/03/15 19:45:46 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/04/08 18:19:07 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,22 @@ HumanB::HumanB()
 {
 	std::cout << "HumanB default constructor called" << std::endl;
 };
-HumanB::HumanB(std::string name):m_name(name)
+HumanB::HumanB(std::string name):_name(name)
 {
-	std::cout << "HumanB was created." << std::endl;
+	std::cout << this->_name << " was created." << std::endl;
 };
 
 HumanB::~HumanB()
 {
-	std::cout << this->m_name << " was destroyed." << std::endl;
+	std::cout << this->_name << " was destroyed." << std::endl;
 };
 
 void	HumanB::attack()
 {
-	std::cout << this->m_name << " attacks with their " << (*this->m_weaponType).getTpe() << std::endl;
+	std::cout << this->_name << " attacks with their " << (*this->_weaponType).getTpe() << std::endl;
 }
 
 void HumanB::setWeapon(Weapon &weapon)
 {
-	this->m_weaponType = &weapon;
+	this->_weaponType = &weapon;
 }

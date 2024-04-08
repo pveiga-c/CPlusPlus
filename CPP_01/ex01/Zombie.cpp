@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 14:55:19 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/03/15 09:20:59 by correia          ###   ########.fr       */
+/*   Updated: 2024/04/08 17:53:06 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	Zombie::setName(std::string str) 
 {
-	this->m_name = str;
+	this->_name = str;
 }
 
 Zombie::Zombie()
@@ -23,10 +23,10 @@ Zombie::Zombie()
 }
 Zombie::~Zombie()
 {
-	std::cout << this->m_name << " was destroyed." << std::endl;
+	std::cout << this->_name << " was destroyed." << std::endl;
 }
 
 void Zombie::announce()
 {
-	std::cout << this->m_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 14:54:07 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/03/15 19:44:15 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/04/08 18:08:15 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ Weapon::Weapon()
 	std::cout << "Weapon Default constructor called" << std::endl;
 }
 
-Weapon::Weapon(std::string newType):m_type(newType)
+Weapon::Weapon(std::string newType):_type(newType)
 {
-	std::cout << "Weapon created with type" << std::endl;
+	std::cout << "Weapon created with type " << this->_type <<std::endl;
 }
 
 Weapon::~Weapon()
@@ -29,9 +29,9 @@ Weapon::~Weapon()
 }
 const	std::string &Weapon::getTpe()
 {
-	return (this->m_type);
+	return (this->_type);
 }
 void	Weapon::setType(std::string newType)
 {
-	this->m_type = newType;
+	this->_type = newType;
 }

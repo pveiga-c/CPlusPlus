@@ -3,26 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 14:54:07 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/03/15 09:24:17 by correia          ###   ########.fr       */
+/*   Updated: 2024/04/08 17:25:10 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int main(int argc, char **argv)
+int main()
 {
 	int numberZombies;
 	std::string nameZombies;
-	(void)argv;
-	
-	if(argc != 1)
-	{
-		std::cout << "Invalid number Arguments." << std::endl;
-		return (0);
-	}
 		
 	std::cout << "Enter the number of zombies: ";
 	std::cin >> numberZombies;

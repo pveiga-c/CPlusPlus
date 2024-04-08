@@ -6,32 +6,32 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 14:54:07 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/03/15 19:46:17 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/04/08 18:19:21 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "../includes/HumanA.hpp"
 
-HumanA::HumanA(Weapon &weapon):m_weaponType(weapon)
+HumanA::HumanA(Weapon &weapon):_weaponType(weapon)
 {
-	// m_weaponType = weapon;
+	// _weaponType = weapon;
 	std::cout << "HumanA default constructor called" << std::endl;
 };
-HumanA::HumanA(std::string name, Weapon &weapon):m_weaponType(weapon), m_name(name)
+HumanA::HumanA(std::string name, Weapon &weapon):_weaponType(weapon), _name(name)
 {
-	//m_name = name;
-	//m_weaponType = weapon
-	std::cout << "HumanA was created." << std::endl;
+	//_name = name;
+	//_weaponType = weapon
+	std::cout << this->_name << " was created." << std::endl;
 
 };
 
 HumanA::~HumanA()
 {
-	std::cout << this->m_name << " was destroyed." << std::endl;
+	std::cout << this->_name << " was destroyed." << std::endl;
 };
 
 void	HumanA::attack()
 {
-	std::cout << this->m_name << " attacks with their " << this->m_weaponType.getTpe() << std::endl;
+	std::cout << this->_name << " attacks with their " << this->_weaponType.getTpe() << std::endl;
 }

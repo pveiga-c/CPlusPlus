@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 14:54:07 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/03/19 17:50:19 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/04/05 18:28:12 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,8 +74,7 @@ void	Harl::complain ( std::string level )
 			break;
 	
 	switch (i) {
-	case 0:
-		debug();
+	case 0:debug();
 		// fall through
 	case 1:
 		info();

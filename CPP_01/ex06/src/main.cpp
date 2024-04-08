@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 14:54:07 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/03/19 17:29:43 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/04/08 19:44:51 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main(int argc, char **argv)
 	}
 	else
 	{
-		std::cout << "Right input -> ./harl DEBUG or INFO or WARNING or ERROR \"" << std::endl;
+		std::cout << "Usage: ./harlFilter [DEBUG, INFO, WARNING, ERROR]" << std::endl;
 	}
 
 

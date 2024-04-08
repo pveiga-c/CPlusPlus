@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 14:54:55 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/03/15 09:21:08 by correia          ###   ########.fr       */
+/*   Updated: 2024/04/08 17:53:06 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Zombie
 		void announce();
 		void setName(std::string name);
 	private:
-		std::string m_name;
+		std::string _name;
 		
 	public:
 		Zombie();
@@ -31,6 +31,6 @@ class Zombie
 	
 };
 
-Zombie*	zombieHorbe( int N, std::string name);
+	Zombie*	zombieHorbe( int N, std::string name);
 
 #endif
