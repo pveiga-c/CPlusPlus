@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 11:29:03 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/03/26 09:25:37 by correia          ###   ########.fr       */
+/*   Updated: 2024/04/10 17:26:39 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 	Fixed::Fixed()
 	{
-		this->m_fixedPoint = 0;
 		std::cout << "Default constructor called" << std::endl;
+		this->_fixedPoint = 0;
 	};
 	
 	Fixed::Fixed(const Fixed& copy)
@@ -27,7 +27,7 @@
 	Fixed& Fixed::operator=( const Fixed &copy)
 	{
 		std::cout << "Copy assignment operator called" << std::endl;
-		this->m_fixedPoint = copy.getRawBits();
+		this->_fixedPoint = copy.getRawBits();
 		return(*this);
 	};
 	
@@ -39,11 +39,11 @@
 	int Fixed::getRawBits( void ) const
 	{
 		std::cout << "getRawBits member function called" << std::endl;
-		return (this->m_fixedPoint);
+		return (this->_fixedPoint);
 	};
 	
 	void Fixed::setRawBits( int const raw )
 	{
-		this->m_fixedPoint = raw;
+		this->_fixedPoint = raw;
 	};
 
