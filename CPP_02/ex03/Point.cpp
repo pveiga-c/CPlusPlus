@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Point.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 09:28:05 by correia           #+#    #+#             */
-/*   Updated: 2024/04/12 10:14:45 by correia          ###   ########.fr       */
+/*   Updated: 2024/04/12 17:08:33 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 
-Point::Point() : x(0), y(0)
+Point::Point() : _x(0), _y(0)
 {
 	
 }
@@ -21,29 +21,27 @@ Point::~Point()
 	
 }
 
-Point::Point(const float p1, const float p2) : x(p1), y(p2)
+Point::Point(const float p1, const float p2) : _x(p1), _y(p2)
 {
 	
 }
 
-Point::Point(const Point& copy)
+Point::Point(const Point& copy) : _x(copy.getX()), _y(copy.getY())
 {
-	(void)copy;
-	*this = copy;
+	
 }
 
 Point& Point::operator=( const Point &copy)
 {
-	(void)copy;
-
 	// std::cout << "Copy assignment operator called" << std::endl;
+	(void)copy;
 	return(*this);
 }
 
 Fixed Point::getX() const {
-	return (x);
+	return (_x);
 }
 
 Fixed Point::getY() const {
-	return (y);
+	return (_y);
 }
