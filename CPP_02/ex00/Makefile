@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/03/02 09:02:24 by correia           #+#    #+#              #
-#    Updated: 2024/03/19 18:32:57 by pveiga-c         ###   ########.fr        #
+#    Created: 2024/03/02 09:02:24 by pveiga-c          #+#    #+#              #
+#    Updated: 2024/04/13 16:14:27 by pveiga-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	myFirstClassInOrthodoxCanonicalForm
 
-CXX		=	c++
+CXX	=	c++
 
 SRCS	=	main.cpp \
 			Fixed.cpp \
