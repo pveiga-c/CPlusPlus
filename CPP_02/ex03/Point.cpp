@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Point.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 09:28:05 by correia           #+#    #+#             */
-/*   Updated: 2024/04/12 17:08:33 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/04/13 08:57:55 by correia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ Point::Point(const Point& copy) : _x(copy.getX()), _y(copy.getY())
 
 Point& Point::operator=( const Point &copy)
 {
-	// std::cout << "Copy assignment operator called" << std::endl;
 	(void)copy;
 	return(*this);
 }
