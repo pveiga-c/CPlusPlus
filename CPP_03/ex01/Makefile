@@ -6,11 +6,11 @@
 #    By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/15 16:25:36 by pveiga-c          #+#    #+#              #
-#    Updated: 2024/04/15 16:26:25 by pveiga-c         ###   ########.fr        #
+#    Updated: 2024/04/15 18:06:25 by pveiga-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	ClapTrap
+NAME	=	ScavTrap
 
 CXX	=	c++
 
