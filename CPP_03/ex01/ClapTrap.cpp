@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 16:26:43 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/04/15 18:00:50 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/04/16 09:25:39 by correia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	ClapTrap::attack(const std::string& target)
 	{	
 		std::cout << "ClapTrap " << this->_name << " attack " << target;
 		std::cout << ", causing " << this->_attackDamage << " point of damage!" << std::endl;
-		this->_energyPoint--;
+		this->_energyPoint -= 1;
 	}
 	else if(_energyPoint <= 0)
 		std::cout << "ClapTrap "<< this->_name << " does not have energy point left to attack" << std::endl;
@@ -67,7 +67,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	if(this->_energyPoint > 0 && this->_hitPoint > 0)
 	{	
 		std::cout << "ClapTrap " << this->_name << " be repairded!" << std::endl;
-		this->_energyPoint--;
+		this->_energyPoint -= 1;
 		this->_hitPoint += amount;
 	}
 	else

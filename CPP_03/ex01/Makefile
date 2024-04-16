@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+         #
+#    By: correia <correia@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/15 16:25:36 by pveiga-c          #+#    #+#              #
-#    Updated: 2024/04/15 18:06:25 by pveiga-c         ###   ########.fr        #
+#    Updated: 2024/04/16 09:15:51 by correia          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ CXX	=	c++
 
 SRCS	=	main.cpp \
 			ClapTrap.cpp \
+			ScavTrap.cpp
 
 OBJS	=	$(SRCS:.cpp=.o)
 

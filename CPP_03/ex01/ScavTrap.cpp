@@ -3,27 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:06:57 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/04/15 19:37:54 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/04/16 09:21:19 by correia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap()
+
+ScavTrap::ScavTrap() /*:  _name("noName"), _hitPoint(100), _energyPoint(50), _attackDamage(20) */
 {
 	this->_name = "noName";
-	std::cout << "ClapTrap " << this->_name << " is created" << std::endl;
-	this->_hitPoint = 100;
+	std::cout << "ScavTrap " << this->_name << " is created" << std::endl;
+ 	this->_hitPoint = 100;
 	this->_energyPoint = 50;
 	this->_attackDamage = 20;
-	
 };
+
 ScavTrap::ScavTrap(std::string name)
 {
-	std::cout << "ClapTrap " << this->_name << " is created" << std::endl;
+	std::cout << "ScavTrap " << this->_name << " is created" << std::endl;
 	this->_name = name;
 	this->_hitPoint = 100;
 	this->_energyPoint = 50;
@@ -32,12 +33,12 @@ ScavTrap::ScavTrap(std::string name)
 
 ScavTrap::ScavTrap(const ScavTrap& copy)
 {
-	std::cout << "ClapTrap " << copy._name << " is created" << std::endl;
+	std::cout << "ScavTrap " << copy._name << " is created" << std::endl;
 	*this = copy;
 };
 ScavTrap& ScavTrap::operator=(const ScavTrap &copy)
 {
-		std::cout << "ClapTrap " << copy._name << " is created" << std::endl;
+		std::cout << "ScavTrap " << copy._name << " is created" << std::endl;
 	if(this != &copy)
 	{
 		this->_name = copy._name;
@@ -50,13 +51,23 @@ ScavTrap& ScavTrap::operator=(const ScavTrap &copy)
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "ClapTrap " << this->_name << " is destroyed" << std::endl;
+	std::cout << "ScavTrap " << this->_name << " is destroyed" << std::endl;
 };
+
 void	ScavTrap::attack(const std::string& target)
 {
-	
+	if(this->_energyPoint > 0 && this->_hitPoint > 0)
+	{	
+		std::cout << "ScavTrap " << this->_name << " attack " << target;
+		std::cout << ", causing " << this->_attackDamage << " point of damage!" << std::endl;
+		this->_energyPoint--;
+	}
+	else if(_energyPoint <= 0)
+		std::cout << "ScavTrap "<< this->_name << " does not have energy point left to attack" << std::endl;
+	else if(_hitPoint <= 0)
+		std::cout << "ScavTrap "<< this->_name << " does not have hit point left to attack" << std::endl;
 };
 void	ScavTrap::guardGate()
 {
-	
+	std::cout << "ScavTrap " << this->_name << " is now in Gate keeper mode" << std::endl;
 };

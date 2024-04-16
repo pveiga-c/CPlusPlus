@@ -3,18 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:06:49 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/04/15 18:42:30 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/04/16 09:21:31 by correia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP;
-#define SCAVTRAP_HPP;
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 
-#include <iostream>
+#include "ScavTrap.hpp"
 #include "ClapTrap.hpp"
+#include <iostream>
 
 class ScavTrap : public ClapTrap
 {
@@ -30,4 +31,4 @@ class ScavTrap : public ClapTrap
 		
 };
 
-#endif;
+#endif
