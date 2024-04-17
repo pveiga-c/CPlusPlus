@@ -6,26 +6,25 @@
 /*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:06:57 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/04/16 09:21:19 by correia          ###   ########.fr       */
+/*   Updated: 2024/04/17 08:57:10 by correia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
 
-ScavTrap::ScavTrap() /*:  _name("noName"), _hitPoint(100), _energyPoint(50), _attackDamage(20) */
+ScavTrap::ScavTrap() : ClapTrap()
 {
-	this->_name = "noName";
 	std::cout << "ScavTrap " << this->_name << " is created" << std::endl;
- 	this->_hitPoint = 100;
+ 	ClapTrap::_energyPoint = 50;
+	this->_hitPoint = 100;
 	this->_energyPoint = 50;
 	this->_attackDamage = 20;
 };
 
-ScavTrap::ScavTrap(std::string name)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
 	std::cout << "ScavTrap " << this->_name << " is created" << std::endl;
-	this->_name = name;
 	this->_hitPoint = 100;
 	this->_energyPoint = 50;
 	this->_attackDamage = 20;
