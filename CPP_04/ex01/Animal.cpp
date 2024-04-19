@@ -6,19 +6,22 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:03:33 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/04/19 16:05:34 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/04/19 18:28:25 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
 #include "Animal.hpp"
 
-Animal::Animal(): type("noAnimal")
+Animal::Animal(): _type("noAnimal")
 {
 	std::cout << "Animal default constructor" << std::endl;
 	
 };
+
+Animal::Animal( std::string type ) : _type(type)
+{
+	std::cout << "Animal Constructor" << std::endl;
+}
 
 Animal::~Animal()
 {
@@ -34,7 +37,7 @@ Animal::Animal(const Animal& copy)
 Animal& Animal::operator=(const Animal &copy)
 {
 	if(this != &copy)
-		this->type = copy.type;
+		this->_type = copy._type;
 	return (*this);
 };
 
@@ -46,5 +49,4 @@ void Animal::makeSound() const
 
 std::string Animal::getType() const 
 {
-	return (this->type);
-}
+	return (this->_type);

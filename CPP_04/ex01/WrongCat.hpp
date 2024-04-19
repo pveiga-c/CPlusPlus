@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/19 16:29:02 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/04/19 18:47:05 by pveiga-c         ###   ########.fr       */
+/*   Created: 2024/04/19 16:03:46 by pveiga-c          #+#    #+#             */
+/*   Updated: 2024/04/19 17:47:11 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-#define BRAIN_HPP
+
+
+#ifndef WRONGCAT_HPP
+#define WRONGCAT_HPP
 
 #include <iostream>
-
-class Brain
+#include "WrongAnimal.hpp"
+class WrongCat : public WrongAnimal
 {
-	private:
-		std::string _ideas[100];
 	public:
-		Brain();
-		Brain(std::string name);
-		Brain(const Brain &copy);
-		Brain& operator=(const Brain& copy);
-		~Brain();
-
-		int divideIdeas (std::string _ideas);
-		
-	
+		WrongCat();
+		WrongCat( std::string type );
+		~WrongCat();
+		WrongCat(const WrongCat& copy);
+		WrongCat& operator=(const WrongCat &copy);
+			
+		void makeSound() const;
 };
-
 
 #endif
