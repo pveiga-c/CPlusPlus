@@ -6,7 +6,7 @@
 /*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 09:49:13 by correia           #+#    #+#             */
-/*   Updated: 2024/04/17 08:51:13 by correia          ###   ########.fr       */
+/*   Updated: 2024/04/19 09:21:19 by correia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 FragTrap::FragTrap() : ClapTrap()
 {
-	this->_name = "noName";
 	std::cout << "FragTrap " << this->_name << " is created" << std::endl;
  	this->_hitPoint = 100;
 	this->_energyPoint = 100;
@@ -22,8 +21,7 @@ FragTrap::FragTrap() : ClapTrap()
 };
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
-		std::cout << "FragTrap " << this->_name << " is created" << std::endl;
-	this->_name = name;
+	std::cout << "FragTrap " << this->_name << " is created" << std::endl;
 	this->_hitPoint = 100;
 	this->_energyPoint = 50;
 	this->_attackDamage = 20;

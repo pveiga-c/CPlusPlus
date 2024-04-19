@@ -3,20 +3,23 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+         #
+#    By: correia <correia@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/17 16:27:38 by pveiga-c          #+#    #+#              #
-#    Updated: 2024/04/17 16:28:21 by pveiga-c         ###   ########.fr        #
+#    Updated: 2024/04/19 10:23:12 by correia          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 
-NAME	=	
+NAME	=	Polymorphism
 
 CXX	=	c++
 
 SRCS	=	main.cpp \
+			Animal.cpp \
+			Dog.cpp \
+			Cat.cpp
 
 OBJS	=	$(SRCS:.cpp=.o)
 
