@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:03:46 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/04/19 16:03:46 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/04/19 16:36:30 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class Cat : public Animal
 {
 	public:
 		Cat();
+		Cat( std::string type );
 		~Cat();
 		Cat(const Cat& copy);
 		Cat& operator=(const Cat &copy);

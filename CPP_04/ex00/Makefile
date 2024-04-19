@@ -6,7 +6,7 @@
 #    By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/19 16:04:04 by pveiga-c          #+#    #+#              #
-#    Updated: 2024/04/19 16:04:07 by pveiga-c         ###   ########.fr        #
+#    Updated: 2024/04/19 17:49:48 by pveiga-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,9 @@ CXX	=	c++
 SRCS	=	main.cpp \
 			Animal.cpp \
 			Dog.cpp \
-			Cat.cpp
+			Cat.cpp \
+			WrongAnimal.cpp \
+			WrongCat.cpp \
 
 OBJS	=	$(SRCS:.cpp=.o)
 

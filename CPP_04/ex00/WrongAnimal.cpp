@@ -1,42 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:03:33 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/04/19 16:37:19 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/04/19 17:47:51 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
+#include "WrongAnimal.hpp"
 
-#include "Animal.hpp"
-
-Animal::Animal(): _type("noAnimal")
+WrongAnimal::WrongAnimal(): _type("noAnimal")
 {
-	std::cout << "Animal default constructor" << std::endl;
+	std::cout << "WrongAnimal default constructor" << std::endl;
 	
 };
 
-Animal::Animal( std::string type ) : _type(type)
+WrongAnimal::WrongAnimal( std::string type ) : _type(type)
 {
-	std::cout << "Animal Constructor" << std::endl;
+	std::cout << "WrongAnimal Constructor" << std::endl;
 }
 
-Animal::~Animal()
+WrongAnimal::~WrongAnimal()
 {
-	std::cout << "Animal default destructor" << std::endl;
+	std::cout << "WrongAnimal default destructor" << std::endl;
 	
 };
-Animal::Animal(const Animal& copy)
+WrongAnimal::WrongAnimal(const WrongAnimal& copy)
 {
-	std::cout << "Animal copy constructor" << std::endl;
+	std::cout << "WrongAnimal copy constructor" << std::endl;
 	*this = copy;
 	
 };
-Animal& Animal::operator=(const Animal &copy)
+WrongAnimal& WrongAnimal::operator=(const WrongAnimal &copy)
 {
 	if(this != &copy)
 		this->_type = copy._type;
@@ -44,12 +43,12 @@ Animal& Animal::operator=(const Animal &copy)
 };
 
 
-void Animal::makeSound() const
+void WrongAnimal::makeSound() const
 {
 	std::cout << "The animal makes a generic sound" << std::endl;
 };
 
-std::string Animal::getType() const 
+std::string WrongAnimal::getType() const 
 {
 	return (this->_type);
 }

@@ -1,36 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/19 16:03:24 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/04/19 16:37:04 by pveiga-c         ###   ########.fr       */
+/*   Created: 2024/04/19 16:29:02 by pveiga-c          #+#    #+#             */
+/*   Updated: 2024/04/19 16:41:51 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
 
-
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
-
-#include <iostream>
-
-class Animal
+class Brain
 {
-	protected:
-		std::string _type;
-
-	public:
-		Animal();
-		Animal( std::string type );
-		virtual ~Animal();
-		Animal(const Animal& copy);
-		Animal& operator=(const Animal &copy);
 	
-		std::string getType() const;
-		virtual void makeSound() const;
 };
+
 
 #endif

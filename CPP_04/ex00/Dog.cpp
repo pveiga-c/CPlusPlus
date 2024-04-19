@@ -6,17 +6,22 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:03:49 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/04/19 16:05:51 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/04/19 16:39:47 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-	Dog::Dog() : Animal()
+	Dog::Dog() : Animal("Dog")
 	{
 		std::cout << "Dog default constructor" << std::endl;
-		this->type = "Dog";
 	};
+
+	Dog::Dog( std::string type )
+	{
+		std::cout << "Animal Constructor" << std::endl;
+		this->_type = type;
+	}
 	
 	Dog::~Dog()
 	{
@@ -31,7 +36,7 @@
 	Dog& Dog::operator=(const Dog &copy)
 	{
 		if(this != &copy)
-			this->type = copy.type;
+			this->_type = copy._type;
 		return(*this);
 	};
 	
