@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/19 09:24:43 by correia           #+#    #+#             */
-/*   Updated: 2024/04/19 10:24:58 by correia          ###   ########.fr       */
+/*   Created: 2024/04/19 16:03:24 by pveiga-c          #+#    #+#             */
+/*   Updated: 2024/04/19 16:03:25 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+
 
 #ifndef ANIMAL_HPP
 #define ANIMAL_HPP

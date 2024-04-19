@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/19 09:29:50 by correia           #+#    #+#             */
-/*   Updated: 2024/04/19 10:21:49 by correia          ###   ########.fr       */
+/*   Created: 2024/04/19 16:03:56 by pveiga-c          #+#    #+#             */
+/*   Updated: 2024/04/19 16:03:57 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+
 
 #ifndef DOG_HPP
 #define DOG_HPP

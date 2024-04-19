@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/19 09:32:39 by correia           #+#    #+#             */
-/*   Updated: 2024/04/19 10:22:03 by correia          ###   ########.fr       */
+/*   Created: 2024/04/19 16:03:40 by pveiga-c          #+#    #+#             */
+/*   Updated: 2024/04/19 16:05:45 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+
 
 #include "Cat.hpp"
 
@@ -20,7 +22,7 @@ Cat::Cat() : Animal()
 
 Cat::~Cat()
 {
-	std::cout << "Cat default constructor" << std::endl;
+	std::cout << "Cat default destructor" << std::endl;
 };
 Cat::Cat(const Cat& copy)
 {

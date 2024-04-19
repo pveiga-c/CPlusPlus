@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/19 09:24:26 by correia           #+#    #+#             */
-/*   Updated: 2024/04/19 10:23:23 by correia          ###   ########.fr       */
+/*   Created: 2024/04/19 16:03:33 by pveiga-c          #+#    #+#             */
+/*   Updated: 2024/04/19 16:05:34 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
+
 #include "Animal.hpp"
 
-Animal::Animal(): type("Animal")
+Animal::Animal(): type("noAnimal")
 {
 	std::cout << "Animal default constructor" << std::endl;
 	
@@ -20,7 +22,7 @@ Animal::Animal(): type("Animal")
 
 Animal::~Animal()
 {
-	std::cout << "Animal default descontructor" << std::endl;
+	std::cout << "Animal default destructor" << std::endl;
 	
 };
 Animal::Animal(const Animal& copy)

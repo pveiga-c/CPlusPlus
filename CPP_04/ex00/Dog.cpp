@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/19 09:29:19 by correia           #+#    #+#             */
-/*   Updated: 2024/04/19 10:21:56 by correia          ###   ########.fr       */
+/*   Created: 2024/04/19 16:03:49 by pveiga-c          #+#    #+#             */
+/*   Updated: 2024/04/19 16:05:51 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 	
 	Dog::~Dog()
 	{
-		std::cout << "Dog default desconstructor" << std::endl;
+		std::cout << "Dog default destructor" << std::endl;
 	};
 	
 	Dog::Dog(const Dog& copy)
