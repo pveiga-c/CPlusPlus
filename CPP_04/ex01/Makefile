@@ -5,18 +5,19 @@
 #                                                     +:+ +:+         +:+      #
 #    By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/04/17 16:27:38 by pveiga-c          #+#    #+#              #
-#    Updated: 2024/04/17 16:28:21 by pveiga-c         ###   ########.fr        #
+#    Created: 2024/04/19 16:04:04 by pveiga-c          #+#    #+#              #
+#    Updated: 2024/04/19 16:04:07 by pveiga-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-
-
-NAME	=	
+NAME	=	Polymorphism
 
 CXX	=	c++
 
 SRCS	=	main.cpp \
+			Animal.cpp \
+			Dog.cpp \
+			Cat.cpp
 
 OBJS	=	$(SRCS:.cpp=.o)
 

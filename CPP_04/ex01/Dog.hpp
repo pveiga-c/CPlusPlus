@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/19 16:04:00 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/04/19 16:12:51 by pveiga-c         ###   ########.fr       */
+/*   Created: 2024/04/19 16:03:56 by pveiga-c          #+#    #+#             */
+/*   Updated: 2024/04/19 16:03:57 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
+
+#ifndef DOG_HPP
+#define DOG_HPP
+
+#include <iostream>
 #include "Animal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
 
-int main()
+class Dog : public Animal
 {
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
+	public:
+		Dog();
+		~Dog();
+		Dog(const Dog& copy);
+		Dog& operator=(const Dog &copy);
+		
+	
+		void makeSound() const;
+};
 
-	delete meta;
-	delete j;
-	delete i;
-
-return 0;
-}
+#endif
