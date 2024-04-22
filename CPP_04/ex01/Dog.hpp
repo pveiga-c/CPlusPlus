@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:03:56 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/04/19 18:42:01 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/04/22 16:04:53 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class Dog : public Animal
 {
 	private:
 		Brain *brain;
+		
 	public:
 		Dog();
 		Dog( std::string type );
@@ -30,6 +31,7 @@ class Dog : public Animal
 		
 	
 		void makeSound() const;
+		void newBrain();
 };
 
 #endif

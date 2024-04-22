@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:03:33 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/04/19 18:28:25 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/04/22 17:28:17 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ Animal::~Animal()
 };
 Animal::Animal(const Animal& copy)
 {
-	std::cout << "Animal copy constructor" << std::endl;
 	*this = copy;
+	std::cout << "Animal copy constructor" << std::endl;
 	
 };
 Animal& Animal::operator=(const Animal &copy)
@@ -50,3 +50,4 @@ void Animal::makeSound() const
 std::string Animal::getType() const 
 {
 	return (this->_type);
+	}
