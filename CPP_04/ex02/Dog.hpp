@@ -1,39 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/19 16:04:00 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/04/22 17:39:15 by pveiga-c         ###   ########.fr       */
+/*   Created: 2024/04/19 16:03:56 by pveiga-c          #+#    #+#             */
+/*   Updated: 2024/04/22 16:04:53 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef DOG_HPP
+#define DOG_HPP
+
+#include <iostream>
 #include "Animal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
+#include "Brain.hpp"
 
-int main()
+class Dog : public Animal
 {
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	delete j;//should not create a leak
-	delete i;
-
-
-	Animal *animals[10];
+	private:
+		Brain *brain;
+		
+	public:
+		Dog();
+		Dog( std::string type );
+		~Dog();
+		Dog(const Dog& copy);
+		Dog& operator=(const Dog &copy);
+		
 	
-	int x = 0;
-	for (x = 0; x < 5; x++)
-		animals[x] = new Dog();
-	for (x = 5 ; x < 10; x++)
-		animals[x] = new Cat();
-	for (int k = 0; k < 10; k++)
-		animals[k]->makeSound();
-	for (int k = 0; k < 10; k++)
-		delete animals[k];
+		void makeSound() const;
+		void newBrain();
+};
 
-
-return 0;
-}
+#endif

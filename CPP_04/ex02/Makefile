@@ -5,19 +5,23 @@
 #                                                     +:+ +:+         +:+      #
 #    By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/04/17 16:27:38 by pveiga-c          #+#    #+#              #
-#    Updated: 2024/04/17 16:28:21 by pveiga-c         ###   ########.fr        #
+#    Created: 2024/04/19 16:04:04 by pveiga-c          #+#    #+#              #
+#    Updated: 2024/04/22 17:43:04 by pveiga-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-
-
-NAME	=	
+NAME	=	AbstractClass
 
 CXX	=	c++
 
 SRCS	=	main.cpp \
-
+			Animal.cpp \
+			Dog.cpp \
+			Cat.cpp \
+			WrongAnimal.cpp \
+			WrongCat.cpp \
+			Brain.cpp
+			
 OBJS	=	$(SRCS:.cpp=.o)
 
 CXXFLAGS=	-Wall -Werror -Wextra -std=c++98
