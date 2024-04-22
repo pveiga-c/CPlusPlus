@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:03:33 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/04/22 17:42:12 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/04/22 17:50:09 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,10 @@ Animal& Animal::operator=(const Animal &copy)
 };
 
 
-void Animal::makeSound() const
-{
-	std::cout << "The animal makes a generic sound" << std::endl;
-};
+// void Animal::makeSound() const
+// {
+// 	std::cout << "The animal makes a generic sound" << std::endl;
+// };
 
 std::string Animal::getType() const 
 {

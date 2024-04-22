@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:04:00 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/04/22 17:39:15 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/04/22 17:53:41 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ int main()
 	for (int k = 0; k < 10; k++)
 		delete animals[k];
 
+	// const Animal test("ola");
+	
 
 return 0;
 }
