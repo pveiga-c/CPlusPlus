@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 09:16:45 by correia           #+#    #+#             */
-/*   Updated: 2024/04/23 09:43:24 by correia          ###   ########.fr       */
+/*   Updated: 2024/04/23 17:04:08 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 #include "AMateria.hpp"
 #include <iostream>
 
-class Ice :AMateria
+class Ice : public AMateria
 {
 	private:
 
 	public:
 		Ice();
-		Ice();
+		~Ice();
 		Ice(const Ice& copy);
 		Ice& operator=(const Ice& copy);
 

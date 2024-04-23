@@ -16,13 +16,13 @@
 #include "AMateria.hpp"
 #include <iostream>
 
-class Cure :AMateria
+class Cure : public AMateria
 {
 	private:
 
 	public:
 		Cure();
-		Cure();
+		~Cure();
 		Cure(const Cure& copy);
 		Cure& operator=(const Cure& copy);
 

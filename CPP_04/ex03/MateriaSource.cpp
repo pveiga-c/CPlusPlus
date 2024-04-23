@@ -1,26 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
+/*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/23 10:00:18 by correia           #+#    #+#             */
-/*   Updated: 2024/04/23 16:25:40 by pveiga-c         ###   ########.fr       */
+/*   Created: 2024/04/23 17:06:51 by pveiga-c          #+#    #+#             */
+/*   Updated: 2024/04/23 17:09:15 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef IMATERIASOURCE_HPP
-#define IMATERIASOURCE_HPP
+#include "MateriaSource.hpp"
 
-#include "AMateria.hpp"
-
-class IMateriaSource 
+MateriaSource::MateriaSource()
 {
-	public:
-		virtual ~IMateriaSource() {} 
-		virtual void learnMateria(AMateria*) = 0; 
-		virtual AMateria* createMateria(std::string const & type) = 0;
+	
+};
+MateriaSource::MateriaSource(AMateria* m)
+{
+	
+};
+MateriaSource::MateriaSource(MateriaSource const & rhs)
+{
+	
+};
+MateriaSource::~MateriaSource()
+{
+	
 };
 
-#endif
+MateriaSource& MateriaSource::operator=(MateriaSource const & rhs)
+{
+	
+};
+
+void MateriaSource::learnMateria(AMateria*)
+{
+	
+};
+AMateria* MateriaSource::createMateria(std::string const & type)
+{
+	
+};

@@ -6,7 +6,7 @@
 #    By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/19 16:04:04 by pveiga-c          #+#    #+#              #
-#    Updated: 2024/04/22 18:42:42 by pveiga-c         ###   ########.fr        #
+#    Updated: 2024/04/23 16:17:45 by pveiga-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ NAME	=	InterfaceRecap
 
 CXX	=	c++
 
-SRCS	=	main.cpp \
+SRCS	=	*.cpp \
+			
 			
 			
 OBJS	=	$(SRCS:.cpp=.o)
