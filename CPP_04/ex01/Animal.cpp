@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:03:33 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/04/22 17:42:12 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/05/01 14:37:14 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ Animal::Animal(const Animal& copy)
 {
 	std::cout << "Animal copy constructor" << std::endl;
 	*this = copy;
-	
 };
 Animal& Animal::operator=(const Animal &copy)
 {
