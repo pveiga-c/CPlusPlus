@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 18:45:40 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/04/23 16:14:03 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/05/01 11:00:57 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@
 class AMateria
 {
 	protected:
-
+		std::string _type;
 	public:
 		AMateria();
+		AMateria(std::string const& type);
 		~AMateria();
 		AMateria(const AMateria& copy);
 		AMateria& operator=(const AMateria &copy);
-		AMateria(std::string const& type);
 		
 		std::string const& getType() const; //Returns the materia type
 

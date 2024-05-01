@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:29:02 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/04/22 16:42:32 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/05/01 10:28:42 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ class Brain
 	public:
 		Brain();
 		Brain(std::string name);
+		~Brain();
 		Brain(const Brain &copy);
 		Brain& operator=(const Brain& copy);
-		~Brain();
 		
 	
 };

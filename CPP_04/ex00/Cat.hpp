@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:03:46 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/04/19 18:37:56 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/05/01 10:00:43 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include "Animal.hpp"
+
 class Cat : public Animal
 {
 	public:
