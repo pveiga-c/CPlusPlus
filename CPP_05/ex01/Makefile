@@ -6,7 +6,7 @@
 #    By: correia <correia@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/01 13:56:02 by pveiga-c          #+#    #+#              #
-#    Updated: 2024/05/02 09:53:30 by correia          ###   ########.fr        #
+#    Updated: 2024/05/02 10:09:05 by correia          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,8 @@ NAME	=	Form
 CXX		=	c++
 
 SRCS	=	main.cpp \
-			Bureaucrat.cpp 
+			Bureaucrat.cpp \
+			Form.cpp
 		
 OBJS	=	$(SRCS:.cpp=.o)
 
