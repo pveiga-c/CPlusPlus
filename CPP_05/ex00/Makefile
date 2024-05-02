@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+         #
+#    By: correia <correia@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/01 13:56:02 by pveiga-c          #+#    #+#              #
-#    Updated: 2024/05/01 13:58:12 by pveiga-c         ###   ########.fr        #
+#    Updated: 2024/05/02 09:18:01 by correia          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,10 +14,9 @@ NAME	=	Bureaucrat
 
 CXX		=	c++
 
-SRCS	=	*.cpp \
-			
-			
-			
+SRCS	=	main.cpp \
+			Bureaucrat.cpp 
+		
 OBJS	=	$(SRCS:.cpp=.o)
 
 CXXFLAGS=	-Wall -Werror -Wextra -std=c++98
