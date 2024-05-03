@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 13:55:36 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/05/02 09:44:09 by correia          ###   ########.fr       */
+/*   Updated: 2024/05/03 18:35:44 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#include "Include.hpp"
 
 Bureaucrat::Bureaucrat() : _name(" ")
 {
@@ -20,9 +20,9 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {
 	//std::cout << "Bureaucrat constructor called" << std::endl;
 	if(grade < 1)
-		throw(Bureaucrat::GradeTooHighException());
+		Bureaucrat::GradeTooHighException();
 	else if(grade > 150)
-		throw(Bureaucrat::GradeTooLowException());
+		Bureaucrat::GradeTooLowException();
 	else
 		_grade = grade;
 	
@@ -44,16 +44,14 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat &copy)
 	return (*this);
 };
 
-const char *Bureaucrat::GradeTooHighException()
+void Bureaucrat::GradeTooHighException()
 {
-	const char *exception = "Grade too high";
-	return (exception);
-};
-const char *Bureaucrat::GradeTooLowException()
+	throw Exception("Grade too high");
+}
+void Bureaucrat::GradeTooLowException()
 {
-	const char *exception = "Grade too low";
-	return (exception);
-};
+	throw Exception("Grade too low");
+}
 int Bureaucrat::getGrade() const
 {
 	return (_grade);
@@ -66,14 +64,14 @@ std::string Bureaucrat::getName() const
 void Bureaucrat::incrementGrade(int grade)
 {
 	if(_grade + grade > 150)
-		throw(Bureaucrat::GradeTooLowException());
+		Bureaucrat::GradeTooLowException();
 	this->_grade++;
 };
 
 void Bureaucrat::decrementGrade(int grade)
 {
 	if(_grade - grade < 1)
-		throw(Bureaucrat::GradeTooHighException());
+		Bureaucrat::GradeTooHighException();
 	this->_grade--;
 };
 

@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 13:55:42 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/05/02 09:16:11 by correia          ###   ########.fr       */
+/*   Updated: 2024/05/03 18:35:44 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 
-#include <iostream>
+#include "Include.hpp"
 
 class Bureaucrat
 {
@@ -28,8 +28,8 @@ class Bureaucrat
 		Bureaucrat(const Bureaucrat& copy);
 		Bureaucrat& operator=(const Bureaucrat &copy);
 
-		const char *GradeTooHighException();
-		const char *GradeTooLowException();
+		void GradeTooHighException();
+		void GradeTooLowException();
 		int getGrade() const;
 		std::string getName() const;
 		void incrementGrade(int grade);
