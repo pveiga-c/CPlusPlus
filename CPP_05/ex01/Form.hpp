@@ -6,7 +6,7 @@
 /*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 09:55:00 by correia           #+#    #+#             */
-/*   Updated: 2024/05/02 10:10:06 by correia          ###   ########.fr       */
+/*   Updated: 2024/05/02 17:38:35 by correia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,15 @@ class Form
 		const std::string _name;
 		bool _sign;
 		const int _signedGrade;
-		const int _executedGrade;
+		const int _execGrade;
 		
 	public:
 		Form();
-		Form(std::string name, bool sing, int signedGrade, int executedGrade);
+		Form(std::string name, int signedGrade, int executedGrade);
 		Form(const Form& copy);
 		Form& operator=(const Form& copy);
-	
+		std::string getname() const;
+		bool getsign() const;
+		int getsignedGrade() const;
+		int getexecGrade() const;
 };
