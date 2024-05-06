@@ -6,7 +6,7 @@
 #    By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/01 13:56:02 by pveiga-c          #+#    #+#              #
-#    Updated: 2024/05/03 18:35:10 by pveiga-c         ###   ########.fr        #
+#    Updated: 2024/05/06 16:29:50 by pveiga-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,3 +49,6 @@ re:			fclean $(NAME)
 
 v:
 			clear && make re && valgrind ./$(NAME)
+
+r:
+			clear && make re && clear && ./$(NAME)
