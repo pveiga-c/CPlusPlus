@@ -6,7 +6,7 @@
 #    By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/01 13:56:02 by pveiga-c          #+#    #+#              #
-#    Updated: 2024/05/06 16:29:50 by pveiga-c         ###   ########.fr        #
+#    Updated: 2024/05/06 19:22:43 by pveiga-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ CXX		=	c++
 
 SRCS	=	main.cpp \
 			Bureaucrat.cpp \
-			Exception.cpp
+			Exception.cpp \
+			Form.cpp
 		
 OBJS	=	$(SRCS:.cpp=.o)
 

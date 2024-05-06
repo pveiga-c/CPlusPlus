@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 13:55:36 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/05/06 17:23:31 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/05/06 19:28:56 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat &copy)
 
 void Bureaucrat::GradeTooHighException()
 {
-		throw Exception("Grade too high");
+	throw Exception("Grade too high");
 }
 void Bureaucrat::GradeTooLowException()
 {
@@ -78,6 +78,16 @@ std::ostream& operator<<(std::ostream& output, const Bureaucrat& bureaucrat)
 {
 	output << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade();
 	return output;
+}
+	
+void Bureaucrat::signForm(const Form& form) const
+{
+	if(form.getIsSigned() == 1)
+		std::cout << getName() << " signed " << form.getName() << std::endl;
+	else if(getGrade() < form.getGradeExecute())
+		std::cout << getName() << "couldn't sign" << form.getName() << " because " << getGrade() << std::endl;
+	else if(getGrade() < form.getGradeRequired())
+		std::cout << getName() << "couldn't sign" << form.getName() << " because " << getGrade() << std::endl;
 }
 
 
