@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 16:39:15 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/05/07 16:43:06 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/05/07 18:23:55 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class Bureaucrat;
 
-class Form
+class AForm
 {
 	private:
 		const std::string _name;
@@ -26,11 +26,11 @@ class Form
 		const int _gradeExecute;
 	
 	public:
-		Form();
-		Form(std::string name, int gradeRequired, int gradeExecute);
-		~Form();
-		Form(const Form& copy);
-		Form& operator=(const Form& copy);
+		AForm();
+		AForm(std::string name, int gradeRequired, int gradeExecute);
+		~AForm();
+		AForm(const AForm& copy);
+		AForm& operator=(const AForm& copy);
 		
 		void GradeTooHighException();
 		void GradeTooLowException();
@@ -40,8 +40,10 @@ class Form
 		int getGradeExecute() const;
 		void beSigned(const Bureaucrat& bureaucrat);
 		
+		virtual void	execute(Bureaucrat const & executor) const = 0;
+		
 };
 
-std::ostream& operator<<(std::ostream& output, const Form& form);
+std::ostream& operator<<(std::ostream& output, const AForm& form);
 
 #endif

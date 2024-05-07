@@ -6,13 +6,13 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 16:39:10 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/05/07 16:42:56 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/05/07 17:12:29 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Include.hpp"
 
-Form::Form() :
+AForm::AForm() :
  _name(" "),
  _isSigned(0),
  _gradeRequired(150),
@@ -20,7 +20,7 @@ Form::Form() :
 {
 }
 
-Form::Form(std::string name, int gradeRequired, int gradeExecute) : 
+AForm::AForm(std::string name, int gradeRequired, int gradeExecute) : 
 _name(name),
 _isSigned(0),
 _gradeRequired(gradeRequired),
@@ -32,11 +32,11 @@ _gradeExecute(gradeExecute)
 		GradeTooLowException();
 }
 
-Form::~Form()
+AForm::~AForm()
 {
 }
 
-Form::Form(const Form& copy):
+AForm::AForm(const AForm& copy):
 _name(getName()),
 _gradeRequired(getGradeRequired()),
 _gradeExecute(getGradeExecute())
@@ -44,7 +44,7 @@ _gradeExecute(getGradeExecute())
 	*this = copy;
 }
 
-Form& Form::operator=(const Form& copy)
+AForm& AForm::operator=(const AForm& copy)
 {
 	if(this != &copy)
 		_isSigned = getIsSigned();
@@ -52,43 +52,43 @@ Form& Form::operator=(const Form& copy)
 }
 
 
-void Form::GradeTooHighException()
+void AForm::GradeTooHighException()
 {
 	throw Exception("Grade too high");
 }
-void Form::GradeTooLowException()
+void AForm::GradeTooLowException()
 {
 	throw Exception("Grade too low");
 }
-std::string Form::getName() const
+std::string AForm::getName() const
 {
 	return (_name);
 }
 
-bool Form::getIsSigned() const
+bool AForm::getIsSigned() const
 {	
 	return (_isSigned);
 }
 
-int Form::getGradeRequired() const
+int AForm::getGradeRequired() const
 {
 	return (_gradeRequired);
 }
 
-int Form::getGradeExecute() const
+int AForm::getGradeExecute() const
 {
 	return (_gradeExecute);
 }
 
-void Form::beSigned(const Bureaucrat& bureaucrat)
+void AForm::beSigned(const Bureaucrat& bureaucrat)
 {
 	if(bureaucrat.getGrade() <= this->getGradeRequired())
 		_isSigned = 1;
 }
 
-std::ostream& operator<<(std::ostream& output, const Form& form)
+std::ostream& operator<<(std::ostream& output, const AForm& Aform)
 {
-	output << form.getName() <<", the grade to signe is  " << form.getGradeRequired() << " and the grade to execute " << form.getGradeExecute() << std::endl;
+	output << Aform.getName() <<", the grade to signe is  " << Aform.getGradeRequired() << " and the grade to execute " << Aform.getGradeExecute() << std::endl;
 	return(output);
 }
 
