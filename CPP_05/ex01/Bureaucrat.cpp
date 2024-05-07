@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 13:55:36 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/05/06 19:28:56 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/05/07 16:11:41 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void Bureaucrat::decrementGrade(int grade)
 
 std::ostream& operator<<(std::ostream& output, const Bureaucrat& bureaucrat)
 {
-	output << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade();
+	output << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade() << std::endl;
 	return output;
 }
 	

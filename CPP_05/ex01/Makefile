@@ -6,11 +6,11 @@
 #    By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/01 13:56:02 by pveiga-c          #+#    #+#              #
-#    Updated: 2024/05/06 19:22:43 by pveiga-c         ###   ########.fr        #
+#    Updated: 2024/05/07 16:00:02 by pveiga-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	Bureaucrat
+NAME	=	Form
 
 CXX		=	c++
 

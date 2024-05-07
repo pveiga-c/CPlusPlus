@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 13:55:42 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/05/06 19:31:33 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/05/07 16:06:12 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define BUREAUCRAT_HPP
 
 #include "Include.hpp"
-#include "Form.hpp"
+class Form;
 
 class Bureaucrat
 {

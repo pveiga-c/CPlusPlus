@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 17:52:23 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/05/06 19:14:56 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/05/07 16:24:15 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,13 +82,13 @@ int Form::getGradeExecute() const
 
 void Form::beSigned(const Bureaucrat& bureaucrat)
 {
-	if(bureaucrat.getGrade() >= this->getGradeRequired());
+	if(bureaucrat.getGrade() <= this->getGradeRequired())
 		_isSigned = 1;
 }
 
 std::ostream& operator<<(std::ostream& output, const Form& form)
 {
-	output << form.getName() <<", Form and the grade to signe is  " << form.getGradeRequired() << " and grade to execute " << form.getGradeExecute() << std::endl;
+	output << form.getName() <<", the grade to signe is  " << form.getGradeRequired() << " and the grade to execute " << form.getGradeExecute() << std::endl;
 	return(output);
 }
 
