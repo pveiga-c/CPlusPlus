@@ -6,14 +6,15 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 13:55:42 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/05/06 17:11:41 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/05/08 19:39:58 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 
-#include "Include.hpp"
+#include <iostream>
+#include <exception>
 
 class Bureaucrat
 {
@@ -28,12 +29,21 @@ class Bureaucrat
 		Bureaucrat(const Bureaucrat& copy);
 		Bureaucrat& operator=(const Bureaucrat &copy);
 
-		void GradeTooHighException();
-		void GradeTooLowException();
 		int getGrade() const;
 		std::string getName() const;
 		void incrementGrade(int grade);
 		void decrementGrade(int grade);
+		
+		class GradeTooHighException : public std::exception
+		{
+			public:
+				const char *what() const throw();
+		};
+		class GradeTooLowException : public std::exception
+		{
+			public:
+				const char *what() const throw();
+		};
 };
 
 std::ostream& operator<<(std::ostream& output, const Bureaucrat& bureaucrat);

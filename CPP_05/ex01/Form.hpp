@@ -6,14 +6,16 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 17:37:59 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/05/07 16:05:55 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/05/08 20:15:31 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FORM_HPP
 #define FORM_HPP
 
-#include "Include.hpp"
+#include <iostream>
+#include <string>
+#include "Bureaucrat.hpp"
 
 class Bureaucrat;
 
@@ -32,13 +34,22 @@ class Form
 		Form(const Form& copy);
 		Form& operator=(const Form& copy);
 		
-		void GradeTooHighException();
-		void GradeTooLowException();
 		std::string getName() const;
 		bool getIsSigned() const;
 		int getGradeRequired() const;
 		int getGradeExecute() const;
 		void beSigned(const Bureaucrat& bureaucrat);
+
+		class GradeTooHighException : public std::exception
+		{
+			public:
+				virtual const char *what() const throw();
+		};
+		class GradeTooLowException : public std::exception
+		{
+			public:
+				virtual const char *what() const throw();
+		};
 		
 };
 

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/01 13:55:42 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/05/07 16:06:12 by pveiga-c         ###   ########.fr       */
+/*   Created: 2024/05/07 16:37:06 by pveiga-c          #+#    #+#             */
+/*   Updated: 2024/05/08 18:37:39 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define BUREAUCRAT_HPP
 
 #include "Include.hpp"
+
 class Form;
 
 class Bureaucrat
@@ -35,8 +36,7 @@ class Bureaucrat
 		std::string getName() const;
 		void incrementGrade(int grade);
 		void decrementGrade(int grade);
-		void signForm(const Form& form) const;
-
+		void signForm(const AForm& Aform) const;
 };
 
 std::ostream& operator<<(std::ostream& output, const Bureaucrat& bureaucrat);

@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 16:39:10 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/05/07 17:12:29 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/05/08 18:48:42 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,4 +91,12 @@ std::ostream& operator<<(std::ostream& output, const AForm& Aform)
 	output << Aform.getName() <<", the grade to signe is  " << Aform.getGradeRequired() << " and the grade to execute " << Aform.getGradeExecute() << std::endl;
 	return(output);
 }
+
+// void	AForm::checkRequirements(Bureaucrat const & executor) const
+// {
+// 	if (!_isSigned)
+// 		throw FormNotSignedException();
+// 	if (executor.getGrade() > _gradeExecute)
+// 		throw GradeTooLowException();
+// }
 

@@ -6,11 +6,11 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 17:52:23 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/05/07 16:24:15 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/05/08 20:30:34 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Include.hpp"
+#include "Form.hpp"
 
 Form::Form() :
  _name(" "),
@@ -27,9 +27,9 @@ _gradeRequired(gradeRequired),
 _gradeExecute(gradeExecute) 
 {
 	if(gradeExecute < 1 || gradeRequired < 1)
-		GradeTooHighException();
+		throw GradeTooHighException();
 	else if(gradeExecute > 150 || gradeRequired > 150)
-		GradeTooLowException();
+		throw GradeTooLowException();
 }
 
 Form::~Form()
@@ -52,13 +52,13 @@ Form& Form::operator=(const Form& copy)
 }
 
 
-void Form::GradeTooHighException()
+const char *Form::GradeTooHighException::what() const throw()
 {
-	throw Exception("Grade too high");
+	return("Grade too high");
 }
-void Form::GradeTooLowException()
+const char *Form::GradeTooLowException::what() const throw()
 {
-	throw Exception("Grade too low");
+	return("Grade too low");
 }
 std::string Form::getName() const
 {
@@ -88,7 +88,9 @@ void Form::beSigned(const Bureaucrat& bureaucrat)
 
 std::ostream& operator<<(std::ostream& output, const Form& form)
 {
-	output << form.getName() <<", the grade to signe is  " << form.getGradeRequired() << " and the grade to execute " << form.getGradeExecute() << std::endl;
+	output << "The name is " << form.getName() << std::endl;
+	output << "The grade to signe is " << form.getGradeRequired() << std::endl;
+	output << "The grade to execute is " << form.getGradeExecute() << std::endl;
 	return(output);
 }
 

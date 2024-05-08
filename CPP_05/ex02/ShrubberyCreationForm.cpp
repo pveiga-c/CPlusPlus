@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 16:39:32 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/05/07 18:21:35 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/05/08 18:40:05 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,19 @@ std::string ShrubberyCreationForm::getTarget() const
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
+	if(executor.)
+	std::string fileName;
 	
+	fileName = _target + "_shrubbery.txt";
+	
+	std::fstream file(fileName.c_str(), std::ios::out);
+
+	if (file.is_open())
+	{
+		file << tree << std::endl;
+		file.close();
+	}
+	else
+		std::cerr << "Error creating the file." << std::endl;
 }
 

@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 16:39:15 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/05/07 18:23:55 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/05/08 18:42:38 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ class AForm
 		void beSigned(const Bureaucrat& bureaucrat);
 		
 		virtual void	execute(Bureaucrat const & executor) const = 0;
-		
+		void	AForm::checkRequirements(Bureaucrat const & executor) const;
 };
 
 std::ostream& operator<<(std::ostream& output, const AForm& form);

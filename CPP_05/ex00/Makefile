@@ -6,7 +6,7 @@
 #    By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/01 13:56:02 by pveiga-c          #+#    #+#              #
-#    Updated: 2024/05/06 16:29:50 by pveiga-c         ###   ########.fr        #
+#    Updated: 2024/05/08 19:36:18 by pveiga-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,7 @@ NAME	=	Bureaucrat
 CXX		=	c++
 
 SRCS	=	main.cpp \
-			Bureaucrat.cpp \
-			Exception.cpp
+			Bureaucrat.cpp
 		
 OBJS	=	$(SRCS:.cpp=.o)
 

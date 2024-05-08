@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 16:39:26 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/05/07 17:55:13 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/05/08 18:29:43 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,9 @@ RobotomyRequestform& RobotomyRequestform::operator=(const RobotomyRequestform& c
 std::string RobotomyRequestform::getTarget() const
 {
 	return (_target);
+}
+
+void RobotomyRequestform::execute(Bureaucrat const & executor) const
+{
+	
 }

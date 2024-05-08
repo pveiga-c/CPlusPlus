@@ -6,12 +6,11 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 13:55:45 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/05/06 17:33:37 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/05/08 19:39:44 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Include.hpp"
-
+#include "Bureaucrat.hpp"
 
 int main ()
 {

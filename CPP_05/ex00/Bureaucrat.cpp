@@ -6,11 +6,11 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 13:55:36 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/05/06 17:23:31 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/05/08 19:39:41 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Include.hpp"
+#include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat() : _name(" ")
 {
@@ -20,9 +20,9 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {
 	//std::cout << "Bureaucrat constructor called" << std::endl;
 	if(grade < 1)
-		GradeTooHighException();
+		throw GradeTooHighException();
 	else if(grade > 150)
-		GradeTooLowException();
+		throw GradeTooLowException();
 	else
 		_grade = grade;
 }
@@ -42,13 +42,13 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat &copy)
 	return (*this);
 }
 
-void Bureaucrat::GradeTooHighException()
+const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
-		throw Exception("Grade too high");
+	return("Grade too high");
 }
-void Bureaucrat::GradeTooLowException()
+const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
-	throw Exception("Grade too low");
+	return("Grade too low");
 }
 std::string Bureaucrat::getName() const
 {
@@ -63,14 +63,14 @@ int Bureaucrat::getGrade() const
 void Bureaucrat::incrementGrade(int grade)
 {
 	if(_grade - grade < 1)
-		GradeTooHighException();
+		throw GradeTooHighException();
 	this->_grade -= grade;
 }
 
 void Bureaucrat::decrementGrade(int grade)
 {
 	if(_grade + grade > 150)
-		GradeTooLowException();
+		throw GradeTooLowException();
 	this->_grade += grade;
 }
 

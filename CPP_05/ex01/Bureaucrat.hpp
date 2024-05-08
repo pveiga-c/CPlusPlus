@@ -6,14 +6,17 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 13:55:42 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/05/07 16:06:12 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/05/08 20:15:36 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 
-#include "Include.hpp"
+#include <iostream>
+#include <exception>
+#include "Form.hpp"
+
 class Form;
 
 class Bureaucrat
@@ -29,14 +32,23 @@ class Bureaucrat
 		Bureaucrat(const Bureaucrat& copy);
 		Bureaucrat& operator=(const Bureaucrat &copy);
 
-		void GradeTooHighException();
-		void GradeTooLowException();
 		int getGrade() const;
 		std::string getName() const;
 		void incrementGrade(int grade);
 		void decrementGrade(int grade);
-		void signForm(const Form& form) const;
+		
+		class GradeTooHighException : public std::exception
+		{
+			public:
+				const char *what() const throw();
+		};
+		class GradeTooLowException : public std::exception
+		{
+			public:
+				const char *what() const throw();
+		};
 
+		void signForm(Form& form) const;
 };
 
 std::ostream& operator<<(std::ostream& output, const Bureaucrat& bureaucrat);

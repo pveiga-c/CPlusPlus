@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bureaucrat..cpp                                    :+:      :+:    :+:   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 16:37:08 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/05/07 16:42:18 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/05/08 18:37:49 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,13 +80,12 @@ std::ostream& operator<<(std::ostream& output, const Bureaucrat& bureaucrat)
 	return output;
 }
 	
-void Bureaucrat::signForm(const Form& form) const
+void Bureaucrat::signForm(const AForm& Aform) const
 {
-	if(form.getIsSigned() == 1)
-		std::cout << getName() << " signed " << form.getName() << std::endl;
-	else if(getGrade() < form.getGradeExecute())
-		std::cout << getName() << "couldn't sign" << form.getName() << " because " << getGrade() << std::endl;
-	else if(getGrade() < form.getGradeRequired())
-		std::cout << getName() << "couldn't sign" << form.getName() << " because " << getGrade() << std::endl;
+	if(Aform.getIsSigned() == 1)
+		std::cout << getName() << " signed " << Aform.getName() << std::endl;
+	else if(getGrade() < Aform.getGradeExecute())
+		std::cout << getName() << "couldn't sign" << Aform.getName() << " because " << getGrade() << std::endl;
+	else if(getGrade() < Aform.getGradeRequired())
+		std::cout << getName() << "couldn't sign" << Aform.getName() << " because " << getGrade() << std::endl;
 }
-

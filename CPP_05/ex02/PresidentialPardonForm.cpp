@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 16:39:21 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/05/07 17:54:28 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/05/08 18:24:51 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,3 +43,9 @@ std::string PresidentialPardonForm::getTarget() const
 {
 	return (_target);
 }
+
+void PresidentialPardonForm::execute(Bureaucrat const & executor) const
+{
+	
+}
+
