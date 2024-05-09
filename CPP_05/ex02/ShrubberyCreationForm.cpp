@@ -3,21 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 16:39:32 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/05/08 18:40:05 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/05/09 17:44:02 by correia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Include.hpp"
+#include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm() : _target(" "), AForm("ShrubberyCreationForm", 145, 137)
+ShrubberyCreationForm::ShrubberyCreationForm() :
+AForm("ShrubberyCreationForm", 145, 137)
 {
 	
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : _target(target)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) :
+AForm(target, 145, 137)
 {
 	
 }
@@ -44,9 +46,8 @@ std::string ShrubberyCreationForm::getTarget() const
 	return (this->_target);
 }
 
-void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
+void ShrubberyCreationForm::execute() const
 {
-	if(executor.)
 	std::string fileName;
 	
 	fileName = _target + "_shrubbery.txt";

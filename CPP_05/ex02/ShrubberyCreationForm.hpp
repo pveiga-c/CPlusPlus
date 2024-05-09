@@ -3,17 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 16:39:35 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/05/07 18:21:08 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/05/09 17:42:46 by correia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SHRUBBERYCREATIONFORM_HPP
 #define SHRUBBERYCREATIONFORM_HPP
 
-#include "Include.hpp"
+#include <iostream>
+#include <exception>
+#include <fstream>
+#include "AForm.hpp"
+
+#define tree "\n\
+           /\\\n\
+          //\\\\\n\
+         ///\\\\\\n\
+        ////\\\\\\\\\n\
+       /////\\\\\\\\\\n\
+      //////\\\\\\\\\\\\\n\
+     ///////\\\\\\\\\\\\\\n\
+    ////////\\\\\\\\\\\\\\\\\n\
+   /////////\\\\\\\\\\\\\\\\\\n\
+  //////////\\\\\\\\\\\\\\\\\\\\\n\
+ ///////////\\\\\\\\\\\\\\\\\\\\\\\n\
+///////////\\\\\\\\\\\\\\\\\\\\\\\\\n\
+          |||\n\
+          |||\n\
+          |||\n\
+"
 
 class ShrubberyCreationForm : public AForm
 {
@@ -28,7 +49,7 @@ class ShrubberyCreationForm : public AForm
 		ShrubberyCreationForm& operator=(const ShrubberyCreationForm& copy);
 
 		std::string getTarget() const;
-		void ShrubberyCreationForm::execute(Bureaucrat const & executor) const;
+		void execute() const;
 
 };
 

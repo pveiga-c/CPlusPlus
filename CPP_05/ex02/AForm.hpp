@@ -3,17 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 16:39:15 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/05/08 18:42:38 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/05/09 17:42:46 by correia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-#define FORM_HPP
+#ifndef AFORM_HPP
+#define AFORM_HPP
 
-#include "Include.hpp"
+#include <iostream>
+#include <string>
+#include "Bureaucrat.hpp"
 
 class Bureaucrat;
 
@@ -32,16 +34,30 @@ class AForm
 		AForm(const AForm& copy);
 		AForm& operator=(const AForm& copy);
 		
-		void GradeTooHighException();
-		void GradeTooLowException();
 		std::string getName() const;
 		bool getIsSigned() const;
 		int getGradeRequired() const;
 		int getGradeExecute() const;
 		void beSigned(const Bureaucrat& bureaucrat);
 		
-		virtual void	execute(Bureaucrat const & executor) const = 0;
-		void	AForm::checkRequirements(Bureaucrat const & executor) const;
+		class GradeTooHighException : public std::exception
+		{
+			public:
+				virtual const char *what() const throw();
+		};
+		class GradeTooLowException : public std::exception
+		{
+			public:
+				virtual const char *what() const throw();
+		};
+		class FormNotSignedException : public std::exception
+		{
+			public:
+				virtual const char *what() const throw();
+		};
+		
+		virtual void	execute() const = 0;
+		void	checkRequirements(Bureaucrat const & executor) const;
 };
 
 std::ostream& operator<<(std::ostream& output, const AForm& form);

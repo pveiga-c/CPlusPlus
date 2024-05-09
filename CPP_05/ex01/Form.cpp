@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 17:52:23 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/05/08 20:30:34 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/05/09 16:31:49 by correia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,12 +80,6 @@ int Form::getGradeExecute() const
 	return (_gradeExecute);
 }
 
-void Form::beSigned(const Bureaucrat& bureaucrat)
-{
-	if(bureaucrat.getGrade() <= this->getGradeRequired())
-		_isSigned = 1;
-}
-
 std::ostream& operator<<(std::ostream& output, const Form& form)
 {
 	output << "The name is " << form.getName() << std::endl;
@@ -94,3 +88,10 @@ std::ostream& operator<<(std::ostream& output, const Form& form)
 	return(output);
 }
 
+void Form::beSigned(const Bureaucrat& bureaucrat)
+{
+	if(bureaucrat.getGrade() <= this->getGradeRequired())
+		_isSigned = 1;
+	else
+		throw GradeTooLowException();
+}

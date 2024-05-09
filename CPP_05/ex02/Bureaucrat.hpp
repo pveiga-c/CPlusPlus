@@ -3,19 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 16:37:06 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/05/08 18:37:39 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/05/09 17:17:53 by correia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 
-#include "Include.hpp"
+#include <iostream>
+#include <exception>
+#include "AForm.hpp"
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -30,13 +32,25 @@ class Bureaucrat
 		Bureaucrat(const Bureaucrat& copy);
 		Bureaucrat& operator=(const Bureaucrat &copy);
 
-		void GradeTooHighException();
-		void GradeTooLowException();
 		int getGrade() const;
 		std::string getName() const;
 		void incrementGrade(int grade);
 		void decrementGrade(int grade);
-		void signForm(const AForm& Aform) const;
+
+		class GradeTooHighException : public std::exception
+		{
+			public:
+				const char *what() const throw();
+		};
+		class GradeTooLowException : public std::exception
+		{
+			public:
+				const char *what() const throw();
+		};
+
+		void signForm(AForm& Aform) const;
+		void executeForm(AForm const &form) const;
+
 };
 
 std::ostream& operator<<(std::ostream& output, const Bureaucrat& bureaucrat);
