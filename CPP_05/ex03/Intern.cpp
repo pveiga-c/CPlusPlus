@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 17:54:43 by correia           #+#    #+#             */
-/*   Updated: 2024/05/09 18:06:50 by correia          ###   ########.fr       */
+/*   Updated: 2024/05/10 17:28:22 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,5 @@ AForm *Intern::makeForm(const std::string &formName, const std::string &formTarg
 	if (form)
 		std::cout<< "Intern creates " << forms_str[i] << std::endl;
 	return form;
+
 }

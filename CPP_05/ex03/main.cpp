@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 16:36:18 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/05/09 17:50:56 by correia          ###   ########.fr       */
+/*   Updated: 2024/05/10 17:40:43 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,29 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int main()
 {
-	try
-	{
-		ShrubberyCreationForm shrubForm("shrub");
-		RobotomyRequestForm robotForm("robot");
-		PresidentialPardonForm pardonForm("pardon");
-		Bureaucrat vip("President", 3);
-		std::cout << shrubForm;
-		std::cout << robotForm;
-		std::cout << pardonForm;
-		vip.signForm(pardonForm);
-		std::cout << pardonForm;
-		vip.executeForm(pardonForm);
-		vip.executeForm(shrubForm);
-		vip.executeForm(robotForm);
-	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what() <<std::endl;
-	}
+	Intern randomIntern1;
+	AForm* roboForm;
+	roboForm = randomIntern1.makeForm("RobotomyRequestForm", "Bender");
+	if(roboForm)
+		roboForm->execute();
+
+	std::cout << std::endl;
+	
+	Intern randomIntern2;
+	AForm* treeForm;
+	treeForm = randomIntern2.makeForm("ShrubberyCreationForm", "Bender");
+	if(treeForm)
+		treeForm->execute();
+	
+	std::cout << std::endl;
+
+	Intern randomIntern3;
+	AForm* presidentForm;
+	presidentForm = randomIntern3.makeForm("PresidentialPardonForm", "Bender");
+	if(presidentForm)
+		presidentForm->execute();
 }

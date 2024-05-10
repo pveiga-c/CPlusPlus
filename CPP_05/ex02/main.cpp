@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 16:36:18 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/05/09 17:50:56 by correia          ###   ########.fr       */
+/*   Updated: 2024/05/10 17:14:09 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,16 @@ int main()
 {
 	try
 	{
-		ShrubberyCreationForm shrubForm("shrub");
+		ShrubberyCreationForm treeForm("tree");
 		RobotomyRequestForm robotForm("robot");
-		PresidentialPardonForm pardonForm("pardon");
+		PresidentialPardonForm presidentialForm("pardon");
 		Bureaucrat vip("President", 3);
-		std::cout << shrubForm;
+		std::cout << treeForm;
 		std::cout << robotForm;
-		std::cout << pardonForm;
-		vip.signForm(pardonForm);
-		std::cout << pardonForm;
-		vip.executeForm(pardonForm);
-		vip.executeForm(shrubForm);
+		std::cout << presidentialForm;
+		vip.signForm(presidentialForm);
+		vip.executeForm(presidentialForm);
+		vip.executeForm(treeForm);
 		vip.executeForm(robotForm);
 	}
 	catch (std::exception &e)

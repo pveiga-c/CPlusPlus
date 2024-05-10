@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: correia <correia@student.42.fr>            +#+  +:+       +#+         #
+#    By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/01 13:56:02 by pveiga-c          #+#    #+#              #
-#    Updated: 2024/05/09 17:54:33 by correia          ###   ########.fr        #
+#    Updated: 2024/05/10 17:17:04 by pveiga-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	Form28B
+NAME	=	Intern
 
 CXX		=	c++
 

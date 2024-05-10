@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 16:39:21 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/05/09 17:44:30 by correia          ###   ########.fr       */
+/*   Updated: 2024/05/10 17:13:20 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,6 @@ std::string PresidentialPardonForm::getTarget() const
 
 void PresidentialPardonForm::execute() const
 {
-	std::cout << this->getName() << "has been pardoned by Zaphod Beeblebrox" << std::endl;
+	std::cout << this->getName() << " has been pardoned by Zaphod Beeblebrox" << std::endl;
 }
 
