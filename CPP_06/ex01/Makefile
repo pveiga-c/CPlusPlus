@@ -6,17 +6,17 @@
 #    By: correia <correia@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/01 13:56:02 by pveiga-c          #+#    #+#              #
-#    Updated: 2024/05/14 16:48:00 by correia          ###   ########.fr        #
+#    Updated: 2024/05/14 16:48:13 by correia          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	ScalarConverter
+NAME	=	Serializer
 
 CXX		=	c++
 
 SRCS	=	main.cpp \
-			ScalarConverter.cpp
-	
+			Serializer.cpp
+
 OBJS	=	$(SRCS:.cpp=.o)
 
 CXXFLAGS=	-Wall -Werror -Wextra -std=c++98
