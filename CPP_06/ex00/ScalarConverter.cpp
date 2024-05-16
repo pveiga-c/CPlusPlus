@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 08:39:38 by correia           #+#    #+#             */
-/*   Updated: 2024/05/14 09:44:11 by correia          ###   ########.fr       */
+/*   Updated: 2024/05/16 17:28:19 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,11 +142,12 @@ void ScalarConverter::convert(std::string str)
 	else if(eType == CHAR)
 	{
 		std::cout << " Type is CHAR" << std::endl;
-		print(atof(str.c_str()));
+		print(str[0]);
 	}
 	else if(eType == FLOAT)
 	{
 		std::cout << " Type is FLOAT" << std::endl;
+		
 		print(atof(str.c_str()));
 	}
 	else if(eType == DOUBLE)

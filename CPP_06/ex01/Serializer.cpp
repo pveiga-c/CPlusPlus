@@ -3,27 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   Serializer.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 16:52:22 by correia           #+#    #+#             */
-/*   Updated: 2024/05/14 16:57:54 by correia          ###   ########.fr       */
+/*   Updated: 2024/05/16 16:45:24 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Serializer.hpp"
 
-Serializer::Serializer() {}
+Serializer::Serializer()
+{
+	
+}
 
-Serializer::Serializer(const Serializer& copy) {
+Serializer::Serializer(const Serializer& copy)
+{
 	*this = copy;
 }
 
-Serializer& Serializer::operator=(const Serializer& copy) {
+Serializer& Serializer::operator=(const Serializer& copy)
+{
 	(void)copy;
 	return *this;
 }
 
-Serializer::~Serializer() {}
+Serializer::~Serializer()
+{
+	
+}
 
 // Pega um ponteiro e o converte para o tipo inteiro sem sinal uintptr_t.
 uintptr_t Serializer::serialize(Data* ptr)
