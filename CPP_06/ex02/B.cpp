@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   B.cpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 09:47:38 by correia           #+#    #+#             */
-/*   Updated: 2024/05/16 09:50:50 by correia          ###   ########.fr       */
+/*   Updated: 2024/05/16 16:13:34 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 
 B::B()
 {
-	std::cout << "\"B\" constructor called" << std::endl;
+	// std::cout << "\"B\" constructor called" << std::endl;
 }
 
 B::~B()
 {
-	std::cout << "\"B\" destructor called" << std::endl;
-	
+	// std::cout << "\"B\" destructor called" << std::endl;
 }

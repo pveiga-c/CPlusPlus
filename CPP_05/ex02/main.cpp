@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 16:36:18 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/05/10 17:14:09 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/05/15 17:04:03 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int main()
 		std::cout << robotForm;
 		std::cout << presidentialForm;
 		vip.signForm(presidentialForm);
+		vip.signForm(treeForm);
 		vip.executeForm(presidentialForm);
 		vip.executeForm(treeForm);
 		vip.executeForm(robotForm);

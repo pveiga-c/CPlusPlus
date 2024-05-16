@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Base.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 10:11:18 by correia           #+#    #+#             */
-/*   Updated: 2024/05/16 10:12:46 by correia          ###   ########.fr       */
+/*   Updated: 2024/05/16 16:13:40 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 Base::~Base()
 {
-	std::cout << "\"Base\" destructor called" << std::endl;
+	// std::cout << "\"Base\" destructor called" << std::endl;
 }

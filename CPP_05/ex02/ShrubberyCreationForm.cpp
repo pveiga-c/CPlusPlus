@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 16:39:32 by pveiga-c          #+#    #+#             */
-/*   Updated: 2024/05/09 17:44:02 by correia          ###   ########.fr       */
+/*   Updated: 2024/05/15 19:24:05 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ AForm("ShrubberyCreationForm", 145, 137)
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) :
 AForm(target, 145, 137)
 {
-	
+	_target = target;
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
