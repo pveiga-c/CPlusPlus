@@ -6,7 +6,7 @@
 /*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 09:50:00 by correia           #+#    #+#             */
-/*   Updated: 2024/05/20 09:58:15 by correia          ###   ########.fr       */
+/*   Updated: 2024/05/22 10:29:31 by correia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Array
 {
 	private:
 		T *_arr;
-		int _arrLenght;
+		unsigned int _arrLenght;
 		
 	public:
 		Array()
@@ -32,7 +32,7 @@ class Array
 		
 		Array(unsigned int n)
 		{
-			_arr = new T;
+			_arr = new T[n];
 			_arrLenght = n;
 		}
 		
@@ -50,8 +50,8 @@ class Array
 				if(this->_arr)
 					delete[] _arr;
 			this->_arrLenght = copy.getSize();
-			this->_arr = new T[getSize()];
-			for(unsigned int i = 0; i < getSize(); i++)
+			this->_arr = new T[this->_arrLenght];
+			for(unsigned int i = 0; i < this->_arrLenght; i++)
 				this->_arr[i] = copy._arr[i];
 			return (*this);
 		}

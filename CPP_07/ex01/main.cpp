@@ -6,14 +6,14 @@
 /*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 19:12:13 by correia           #+#    #+#             */
-/*   Updated: 2024/05/18 09:45:57 by correia          ###   ########.fr       */
+/*   Updated: 2024/05/22 09:56:42 by correia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "iter.hpp"
 
 template <typename T>
-void printTemplate( T &i )
+void printData( T &i )
 {
 	std::cout << i << std::endl;
 }
@@ -28,16 +28,16 @@ int main(void)
 	std::string arrString[] = { "one", "two", "three", "four", "five" };
 	
 	std::cout << "int: " << std::endl;
-	iter<int>(arrInt, length, printTemplate<int>);
+	iter<int>(arrInt, length, printData<int>);
 
 	std::cout << std::endl << "double: " << std::endl;
-	iter<double>(arrDouble, length, printTemplate<double>);
+	iter<double>(arrDouble, length, printData<double>);
 
 	std::cout << std::endl << "char: " << std::endl;
-	iter<char>(arrChar, length, printTemplate<char>);
+	iter<char>(arrChar, length, printData<char>);
 
 	std::cout << std::endl << "str: " << std::endl;
-	iter<std::string>(arrString, length, printTemplate<std::string>);
+	iter<std::string>(arrString, length, printData<std::string>);
 
 	return (0);
 }
