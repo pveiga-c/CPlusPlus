@@ -6,7 +6,7 @@
 /*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 10:08:12 by correia           #+#    #+#             */
-/*   Updated: 2024/05/21 18:29:18 by correia          ###   ########.fr       */
+/*   Updated: 2024/05/23 09:45:49 by correia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ class Span
 	private:
 		unsigned int _num;
 		std::vector<int> _vector;
-		unsigned int _fill;
 		
 		Span();
 
@@ -35,8 +34,13 @@ class Span
 		~Span();
 	
 		void addNumber(int number);
-		int shortestSpan();
-		int longestSpan();
+		void addNumbers(const std::vector<int>& array);
+		
+		template <typename Iterator>
+		void addNumbers(Iterator begin, Iterator end);
+		
+		int shortestSpan() const;
+		int longestSpan() const;
 		
 		class noSpanFoundException : public std::exception
 		{
@@ -56,10 +60,15 @@ class Span
 				}
 		};
 		
-		void addNumbers(std::vector<int> array);
 		
 };
 
-
+template <typename Iterator>
+void Span::addNumbers(Iterator begin, Iterator end)
+{
+    if (_vector.size() + std::distance(begin, end) > _num)
+        throw SpanIsFullException();
+    _vector.insert(_vector.end(), begin, end);
+}
 
 #endif

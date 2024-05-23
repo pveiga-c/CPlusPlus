@@ -6,7 +6,7 @@
 /*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 08:34:03 by correia           #+#    #+#             */
-/*   Updated: 2024/05/22 09:24:35 by correia          ###   ########.fr       */
+/*   Updated: 2024/05/23 10:01:48 by correia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <iostream>
 #include <stack>
 #include <string>
+#include <list>
 
 template<typename T>
 class MutantStack : public std::stack<T>
@@ -39,7 +40,9 @@ class MutantStack : public std::stack<T>
 		{
 
 		};
+		
 		typedef typename std::stack<T>::container_type::iterator iterator;
+		
 		iterator begin()
 		{
 			return (this->c.begin());

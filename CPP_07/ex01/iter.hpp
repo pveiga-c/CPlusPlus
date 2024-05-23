@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Iter.hpp                                           :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 19:13:26 by correia           #+#    #+#             */
-/*   Updated: 2024/05/18 09:31:39 by correia          ###   ########.fr       */
+/*   Updated: 2024/05/23 08:35:42 by correia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,18 @@ void	iter(T* array, unsigned int length, void(*fun)(T&))
 {
 	for (unsigned int i = 0; i < length; i++)
 		fun(array[i]);
+}
+
+template <typename T>
+void	iter(T* const array, unsigned int length, void(*fun)(const T&))
+{
+	for (unsigned int i = 0; i < length; i++)
+		fun(array[i]);
+}
+
+template <typename T>
+void printData( T &i )
+{
+	std::cout << i << std::endl;
 }
 #endif

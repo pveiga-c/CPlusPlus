@@ -6,17 +6,11 @@
 /*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 19:12:13 by correia           #+#    #+#             */
-/*   Updated: 2024/05/22 09:56:42 by correia          ###   ########.fr       */
+/*   Updated: 2024/05/23 08:35:34 by correia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "iter.hpp"
-
-template <typename T>
-void printData( T &i )
-{
-	std::cout << i << std::endl;
-}
 
 int main(void)
 {
