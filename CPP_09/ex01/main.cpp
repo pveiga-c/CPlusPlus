@@ -6,21 +6,25 @@
 /*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 13:57:34 by correia           #+#    #+#             */
-/*   Updated: 2024/06/02 09:27:47 by correia          ###   ########.fr       */
+/*   Updated: 2024/06/02 16:34:48 by correia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "BitcoinExchange.hpp"
+#include "RPN.hpp"
 
 int main(int argc, char **argv)
 {
-	(void)argc;
+	if(argc != 2)
+	{
+		std::cout << "Bad imput" << std::endl;
+		return (1);
+	}
 
 	try
 	{
-		BitcoinExchange a;
-		a.parsingCsv();
-		a.parsingTxt(argv[1]);
+		RPN rpn;
+		rpn.fillStack(argv[1]);
+		rpn.calculatRpn();
 	}
 	catch(const std::exception& e)
 	{
