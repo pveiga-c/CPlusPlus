@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: correia <correia@student.42.fr>            +#+  +:+       +#+         #
+#    By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/01 13:56:02 by pveiga-c          #+#    #+#              #
-#    Updated: 2024/06/03 08:13:01 by correia          ###   ########.fr        #
+#    Updated: 2024/06/03 17:34:16 by pveiga-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME	=	PmergeMe
 CXX		=	c++
 
 SRCS	=	main.cpp \
-			RPN.cpp
+			PmergeMe.cpp
 			
 
 OBJS	=	$(SRCS:.cpp=.o)

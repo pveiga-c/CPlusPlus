@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 14:04:42 by correia           #+#    #+#             */
-/*   Updated: 2024/06/02 09:05:59 by correia          ###   ########.fr       */
+/*   Updated: 2024/06/03 16:48:59 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ float BitcoinExchange::checkPriceCsv(std::string priceStr)
 
 	if (price < 0)
 		throw BitcoinExchange::InvalidPrice("Error: not a positive number.");
-	else if (price > 2147483647)
+	else if (price > 2147483647.0)
 		throw BitcoinExchange::InvalidPrice("Error: too large a number.");
 	return (price);
 }
