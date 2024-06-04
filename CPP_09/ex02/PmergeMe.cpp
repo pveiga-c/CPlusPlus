@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 08:14:53 by correia           #+#    #+#             */
-/*   Updated: 2024/06/03 19:54:48 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/06/04 09:10:19 by correia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,14 +95,22 @@ void PmergeMe::sortList()
 	}
 	for (std::list<std::pair<int, int> >::iterator it = _listPair.begin(); it != _listPair.end(); ++it) 
 	{
-		std::list<std::pair<int,int> >::iterator nextIt = it;
+		std::list<std::pair<int,int> >::iterator nextIt = ++it;
+		--it;
+		if(nextIt == _listPair.end())
+			break; 
+
+		if(it->first < nextIt->first)
+			_finalList.push_back(it->first);
+		else
+			_finalList.push_back(nextIt->first);
+			
+
+		std::cout << "it->first = " << it->first <<" - it->seq = " << it->second << std::endl;
+		std::cout << "nextIt->first = " << nextIt->first <<" - nextIt->seq = " << nextIt->second << std::endl;
+
 		
-		int firstNumPair1 = it->first;
-		//if(std::next(it) != _listPair.end())
-			int firstNumPair2 = nextIt->first;
-		std::cout << firstNumPair1 << " - " << firstNumPair2 << std::endl;
-		
-		// if(it->first < (it->first)++)
+		// if(it ->first < (it->first)++)*/
 			
 		
 	}
@@ -111,8 +119,8 @@ void PmergeMe::sortList()
 
 
 	
-	// for (std::list<std::pair<int, int> >::iterator it = _listPair.begin(); it != _listPair.end(); ++it) 
-	// {
-	// 	std::cout << "(" << it->first << ", " << it->second << ")" << std::endl;
-	// }
+/* 	for (std::list<std::pair<int, int> >::iterator it = _listPair.begin(); it != _listPair.end(); ++it) 
+	{
+ 		std::cout << "(" << it->first << ", " << it->second << ")" << std::endl;
+	} */
 }
