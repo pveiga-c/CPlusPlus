@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 08:13:54 by correia           #+#    #+#             */
-/*   Updated: 2024/06/03 19:51:38 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/06/05 09:41:33 by correia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,14 @@ class PmergeMe
 	void addDeque(int num);
 	void sort();
 	void sortList();
+
+	int isSort();
+	void printList();
+	void printPairList();
+	void printFinalList();
+
+
+
 	
 };
 

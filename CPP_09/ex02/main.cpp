@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 13:57:34 by correia           #+#    #+#             */
-/*   Updated: 2024/06/03 18:07:20 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/06/05 08:58:56 by correia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,15 @@ int main(int argc, char **argv)
 		std::cout << "Impossible to sort" << std::endl;
 		return(1);
 	}
+	
 	try
 	{
 		PmergeMe a(argv + 1);
-		a.sort();
+		a.printList();
+		if(!a.isSort())
+			a.sort();
+		else
+			std::cout << "is sort" << std::endl;
 		
 	}
 	catch(const std::exception& e)

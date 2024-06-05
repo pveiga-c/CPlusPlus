@@ -6,7 +6,7 @@
 /*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 08:14:53 by correia           #+#    #+#             */
-/*   Updated: 2024/06/04 09:10:19 by correia          ###   ########.fr       */
+/*   Updated: 2024/06/05 10:35:39 by correia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,9 @@ PmergeMe::PmergeMe(char **imput)
 			throw OverflowException();
 
 		addList(num);
-		addDeque(num);
+		//addDeque(num);
 	}
+
 }
 
 void PmergeMe::addList(int num)
@@ -71,56 +72,150 @@ void PmergeMe::addDeque(int num)
 void PmergeMe::sort ()
 {
 	std::cout << "Before: ";
-	for(std::list<int>::iterator it = _list.begin(); it != _list.end(); ++it)
-		std::cout << *it << " ";
-	std::cout << std::endl;
+	printList();
 	sortList();
 }
 
 void PmergeMe::sortList()
 {
-	for(std::list<int>::iterator it = _list.begin(); it != _list.end(); ++it)
-	{
-		int num1 = *it;
-		int num2 = *(++it);
-		
-		*(--it);
-		if(num1 < num2)
-			_listPair.push_back(std::make_pair(num1, num2));
-		else
-			_listPair.push_back(std::make_pair(num2, num1));
+
 	
-		if (++it == _list.end())
-			break;
+		/* colocar o primeiro valor no inicio da final list */
+
+		
+	std::list<int>::iterator it = _list.begin();
+	
+	if(_list.size() % 2 != 0)
+	{	
+		_finalList.begin() = _list.begin();
+		it++;
+		_list.pop_front();
 	}
+	printList();
+	printFinalList();
+	std::list<int>::iterator nextIt = _list.begin();
+	++nextIt;
+	std::cout << *it << " - " << *nextIt << std::endl;
+
+	while(it != _list.end() && nextIt != _list.end())
+	{
+		if(*it < *nextIt)
+			_listPair.push_back(std::make_pair(*it, *nextIt));
+		else
+			_listPair.push_back(std::make_pair(*nextIt, *it));
+			
+		std::advance(it,2);
+		std::advance(nextIt,2);
+	}
+	
+	std::list<std::pair<int,int> >::iterator pairIt = _listPair.begin();
+	std::list<std::pair<int,int> >::iterator nextPairIt = _listPair.begin();
+	++nextPairIt; 
+
+	if(pairIt->first < nextPairIt->first)
+	{
+		_finalList.push_back(pairIt->first);
+		_finalList.push_back(nextPairIt->first);
+	}
+	else
+	{
+		_finalList.push_back(nextPairIt->first);
+		_finalList.push_back(pairIt->first);
+	}
+	if(pairIt->second < nextPairIt->second)
+	{
+	_finalList.push_back(pairIt->second);
+		_finalList.push_back(nextPairIt->second);
+	}
+	else
+	{
+		_finalList.push_back(nextPairIt->second);
+		_finalList.push_back(pairIt->second);
+	}
+	++nextPairIt;
+	while(nextPairIt != _listPair.end())
+	{
+		int flag = 0;
+		std::list<int>::iterator finalListIt =_finalList.begin();
+		
+		while(finalListIt != _finalList.end())
+		{
+			if(nextPairIt->first < *finalListIt)
+			{
+				flag = 1;
+				_finalList.insert(finalListIt, nextPairIt->first);
+				break;
+			}
+			++finalListIt;
+		}
+		while(finalListIt != _finalList.end())
+		{
+			if(nextPairIt->second < *finalListIt)
+			{
+				flag = 2;
+				_finalList.insert(finalListIt, nextPairIt->second);
+				break;
+			}
+			++finalListIt;
+		}
+		if(flag == 0)
+		{
+			_finalList.push_back(nextPairIt->first);
+			_finalList.push_back(nextPairIt->second);
+		}
+		if(flag == 1)
+			_finalList.push_back(nextPairIt->second);
+		++nextPairIt;
+	}
+
+
+	printPairList();
+	printFinalList();
+}
+
+int PmergeMe::isSort()
+{
+	std::list<int>::iterator it = _list.begin();
+	std::list<int>::iterator nextIt = _list.begin();
+	++nextIt;
+	
+	while(nextIt != _list.end())
+	{
+		if(*it > *nextIt)
+			return(0);
+		++it;
+		++nextIt;
+	}
+	return (1);
+}
+
+void PmergeMe::printList()
+{
+	for (std::list<int>::iterator it = _list.begin(); it != _list.end(); ++it) 
+	{
+ 		std::cout  << *it << " ";
+	}
+	std::cout << std::endl;
+	std::cout << std::endl;
+
+}
+void PmergeMe::printFinalList()
+{
+	for (std::list<int>::iterator it = _finalList.begin(); it != _finalList.end(); ++it) 
+	{
+ 		std::cout  << *it << " ";
+	}
+	std::cout << std::endl;
+	std::cout << std::endl;
+
+}
+void PmergeMe::printPairList()
+{
 	for (std::list<std::pair<int, int> >::iterator it = _listPair.begin(); it != _listPair.end(); ++it) 
 	{
-		std::list<std::pair<int,int> >::iterator nextIt = ++it;
-		--it;
-		if(nextIt == _listPair.end())
-			break; 
-
-		if(it->first < nextIt->first)
-			_finalList.push_back(it->first);
-		else
-			_finalList.push_back(nextIt->first);
-			
-
-		std::cout << "it->first = " << it->first <<" - it->seq = " << it->second << std::endl;
-		std::cout << "nextIt->first = " << nextIt->first <<" - nextIt->seq = " << nextIt->second << std::endl;
-
-		
-		// if(it ->first < (it->first)++)*/
-			
-		
-	}
-
-	
-
-
-	
-/* 	for (std::list<std::pair<int, int> >::iterator it = _listPair.begin(); it != _listPair.end(); ++it) 
-	{
  		std::cout << "(" << it->first << ", " << it->second << ")" << std::endl;
-	} */
+	} 
+	std::cout << std::endl;
+	std::cout << std::endl;
+
 }
