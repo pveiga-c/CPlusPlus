@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 08:14:53 by correia           #+#    #+#             */
-/*   Updated: 2024/06/05 10:35:39 by correia          ###   ########.fr       */
+/*   Updated: 2024/06/05 20:42:30 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,117 +69,100 @@ void PmergeMe::addDeque(int num)
 	_deque.push_back(num);
 }
 
-void PmergeMe::sort ()
+void PmergeMe::FordJohnson()
 {
-	std::cout << "Before: ";
-	printList();
+	
+	//std::cout << "Before: ";
+//	printList(_list);
 	sortList();
+//	std::cout << "After : ";
+	//printList(_finalList);
+	
 }
 
 void PmergeMe::sortList()
 {
 
+	splitList();
+
+	orderRightLeftList();
 	
-		/* colocar o primeiro valor no inicio da final list */
-
-		
-	std::list<int>::iterator it = _list.begin();
-	
-	if(_list.size() % 2 != 0)
-	{	
-		_finalList.begin() = _list.begin();
-		it++;
-		_list.pop_front();
-	}
-	printList();
-	printFinalList();
-	std::list<int>::iterator nextIt = _list.begin();
-	++nextIt;
-	std::cout << *it << " - " << *nextIt << std::endl;
-
-	while(it != _list.end() && nextIt != _list.end())
-	{
-		if(*it < *nextIt)
-			_listPair.push_back(std::make_pair(*it, *nextIt));
-		else
-			_listPair.push_back(std::make_pair(*nextIt, *it));
-			
-		std::advance(it,2);
-		std::advance(nextIt,2);
-	}
-	
-	std::list<std::pair<int,int> >::iterator pairIt = _listPair.begin();
-	std::list<std::pair<int,int> >::iterator nextPairIt = _listPair.begin();
-	++nextPairIt; 
-
-	if(pairIt->first < nextPairIt->first)
-	{
-		_finalList.push_back(pairIt->first);
-		_finalList.push_back(nextPairIt->first);
-	}
-	else
-	{
-		_finalList.push_back(nextPairIt->first);
-		_finalList.push_back(pairIt->first);
-	}
-	if(pairIt->second < nextPairIt->second)
-	{
-	_finalList.push_back(pairIt->second);
-		_finalList.push_back(nextPairIt->second);
-	}
-	else
-	{
-		_finalList.push_back(nextPairIt->second);
-		_finalList.push_back(pairIt->second);
-	}
-	++nextPairIt;
-	while(nextPairIt != _listPair.end())
-	{
-		int flag = 0;
-		std::list<int>::iterator finalListIt =_finalList.begin();
-		
-		while(finalListIt != _finalList.end())
-		{
-			if(nextPairIt->first < *finalListIt)
-			{
-				flag = 1;
-				_finalList.insert(finalListIt, nextPairIt->first);
-				break;
-			}
-			++finalListIt;
-		}
-		while(finalListIt != _finalList.end())
-		{
-			if(nextPairIt->second < *finalListIt)
-			{
-				flag = 2;
-				_finalList.insert(finalListIt, nextPairIt->second);
-				break;
-			}
-			++finalListIt;
-		}
-		if(flag == 0)
-		{
-			_finalList.push_back(nextPairIt->first);
-			_finalList.push_back(nextPairIt->second);
-		}
-		if(flag == 1)
-			_finalList.push_back(nextPairIt->second);
-		++nextPairIt;
-	}
+	std::cout << "left list = ";
+	printList(_leftList);
+	std::cout <<std::endl;
+	std::cout << "right list = ";
+	printList(_rightList);
 
 
-	printPairList();
-	printFinalList();
 }
 
-int PmergeMe::isSort()
+void PmergeMe::splitList()
 {
-	std::list<int>::iterator it = _list.begin();
-	std::list<int>::iterator nextIt = _list.begin();
+	size_t i = 0;
+	size_t size = _list.size();
+	std::list<int>::iterator itList = _list.begin();
+
+	while(itList != _list.end())
+	{
+		while(i < size / 2)
+		{
+			_leftList.push_back(*itList);
+			++itList;
+			_list.pop_front();
+			i++;
+		}
+		while(i != size)
+		{
+			_rightList.push_back(*itList);
+			++itList;
+			_list.pop_front();
+			i++;
+		}
+		++itList;
+	}
+}
+void PmergeMe::orderRightLeftList()
+{
+	while(!isSort(_leftList))
+	{
+		std::list<int>::iterator itLeftList = _leftList.begin();
+		std::list<int>::iterator nextItLeftList = _leftList.begin();
+		++nextItLeftList;
+		
+		while(nextItLeftList != _leftList.end())
+		{
+			if(*nextItLeftList < *itLeftList)
+				std::iter_swap(itLeftList, nextItLeftList);
+			++itLeftList;
+			++nextItLeftList;
+		}
+	}
+	
+	/* primeiro a esquerda */
+	
+	while(!isSort(_rightList))
+	{
+		std::list<int>::iterator itRightList = _rightList.begin();
+		std::list<int>::iterator nextItRightList = _rightList.begin();
+		++nextItRightList;
+		
+		while(nextItRightList != _rightList.end())
+		{
+			if(*nextItRightList < *itRightList)
+				std::iter_swap(itRightList, nextItRightList);
+			++itRightList;
+			++nextItRightList;
+		}
+	}
+}
+
+int PmergeMe::isSort(std::list<int> list)
+{
+	std::list<int>::iterator it = list.begin();
+	std::list<int>::iterator nextIt = list.begin();
 	++nextIt;
 	
-	while(nextIt != _list.end())
+	while(nextIt != list.end())
 	{
 		if(*it > *nextIt)
 			return(0);
@@ -189,33 +172,22 @@ int PmergeMe::isSort()
 	return (1);
 }
 
-void PmergeMe::printList()
+void PmergeMe::printList(std::list<int> list)
 {
-	for (std::list<int>::iterator it = _list.begin(); it != _list.end(); ++it) 
+	for (std::list<int>::iterator it = list.begin(); it != list.end(); ++it) 
 	{
  		std::cout  << *it << " ";
 	}
 	std::cout << std::endl;
-	std::cout << std::endl;
-
 }
-void PmergeMe::printFinalList()
-{
-	for (std::list<int>::iterator it = _finalList.begin(); it != _finalList.end(); ++it) 
-	{
- 		std::cout  << *it << " ";
-	}
-	std::cout << std::endl;
-	std::cout << std::endl;
 
-}
-void PmergeMe::printPairList()
-{
-	for (std::list<std::pair<int, int> >::iterator it = _listPair.begin(); it != _listPair.end(); ++it) 
-	{
- 		std::cout << "(" << it->first << ", " << it->second << ")" << std::endl;
-	} 
-	std::cout << std::endl;
-	std::cout << std::endl;
+// void PmergeMe::printPairList()
+// {
+// 	for (std::list<std::pair<int, int> >::iterator it = _listPair.begin(); it != _listPair.end(); ++it) 
+// 	{
+//  		std::cout << "(" << it->first << ", " << it->second << ")" << std::endl;
+// 	} 
+// 	std::cout << std::endl;
+// 	std::cout << std::endl;
 
-}
+// }

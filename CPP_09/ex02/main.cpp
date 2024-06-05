@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 13:57:34 by correia           #+#    #+#             */
-/*   Updated: 2024/06/05 08:58:56 by correia          ###   ########.fr       */
+/*   Updated: 2024/06/05 19:23:16 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,7 @@ int main(int argc, char **argv)
 	try
 	{
 		PmergeMe a(argv + 1);
-		a.printList();
-		if(!a.isSort())
-			a.sort();
-		else
-			std::cout << "is sort" << std::endl;
-		
+		a.FordJohnson();
 	}
 	catch(const std::exception& e)
 	{
