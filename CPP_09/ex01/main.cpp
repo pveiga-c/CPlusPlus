@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 13:57:34 by correia           #+#    #+#             */
-/*   Updated: 2024/06/02 16:34:48 by correia          ###   ########.fr       */
+/*   Updated: 2024/06/06 19:24:14 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,18 @@ int main(int argc, char **argv)
 		return (1);
 	}
 
+
 	try
 	{
 		RPN rpn;
-		rpn.fillStack(argv[1]);
-		rpn.calculatRpn();
+		rpn.mathPolish(argv[1]);
+
 	}
 	catch(const std::exception& e)
 	{
 		 std::cout << e.what();
 	}
-	
-	
 
-
+	
 }
+

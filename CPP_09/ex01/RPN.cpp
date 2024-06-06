@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   RPN.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/02 09:43:04 by correia           #+#    #+#             */
-/*   Updated: 2024/06/02 18:15:42 by correia          ###   ########.fr       */
+/*   Updated: 2024/06/06 20:47:17 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RPN.hpp"
 
-RPN::RPN()
+RPN::RPN(): operandcouter(0), operatorcouter(0)
 {
 	
 }
@@ -32,6 +32,90 @@ RPN& RPN::operator=(const RPN& copy)
 	return (*this);
 }
 
+void RPN::mathPolish(std::string imput)
+{
+	std::cout << imput <<std::endl;
+	int i = 0;
+	
+	while(imput[i])
+	{
+		if(isdigit(imput[i]))
+		{
+			++operandcouter;
+		}
+		else if (std::strchr("+-*/", imput[i]))
+		{
+			++operatorcouter;
+		}
+		else if (imput[i] != ' ')
+		{
+			std::cout << "ola\n";
+			throw BadImputException();
+		}
+		i++;
+	}
+	if(operandcouter != operatorcouter + 1)
+		throw BadImputException();
+		
+	i = 0;
+	while(imput[i])
+	{
+		if(isdigit(imput[i]))
+		{
+			_digitStr = imput.substr(i, 1);
+			std::stringstream value(_digitStr);
+			value >> _digitNum;
+			if(_digitNum < 0 || _digitNum > 10)
+				throw BadImputException();
+			_mathPolish.push(_digitNum);
+		}
+		else if (std::strchr("+-*/", imput[i]))
+		{
+			if(_mathPolish.size() < 2)
+				throw BadImputException();
+
+			double secundNumber = _mathPolish.top();
+			_mathPolish.pop();
+			double firstNumber = _mathPolish.top();
+			_mathPolish.pop();
+			
+			double result = makeoperation(firstNumber, secundNumber, imput[i]);
+			_mathPolish.push(result);
+		}
+		i++;
+	}
+	if(_mathPolish.size() != 1)
+		throw BadImputException();
+	std::cout << _mathPolish.top() << std::endl;
+}
+double RPN::makeoperation(double firstNumber, double secundNumber, char imput)
+{
+	double result;
+	
+	switch (imput)
+	{
+	case '+':
+		result = firstNumber + secundNumber;
+		break;
+	case '-':
+		result = firstNumber - secundNumber;
+		break;
+	case '*':
+		result = firstNumber * secundNumber;
+		break;
+	case '/':
+		if(secundNumber != 0)
+			result = firstNumber / secundNumber;
+		else
+			throw BadImputException();
+		break;
+	}
+	return(result);
+}
+
+
+
+/* 
 void RPN::fillStack (const std::string imput)
 {
 	int i = 0;
@@ -138,3 +222,4 @@ void RPN::calculatRpn()
 }
 
 
+ */
