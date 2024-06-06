@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 08:13:54 by correia           #+#    #+#             */
-/*   Updated: 2024/06/06 10:18:37 by correia          ###   ########.fr       */
+/*   Updated: 2024/06/06 18:31:53 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,16 @@ class PmergeMe
 		std::list<int> _finalList;
 		std::list<int> _rightList;
 		std::list<int> _leftList;
+		clock_t _listStart;
+		clock_t _listEnd;
 		
 		std::deque<int> _deque;
 		std::deque<int> _finalDeque;
 		std::deque<int> _rightDeque;
 		std::deque<int> _leftDeque;
 	
-		
+		clock_t _dequeStart;
+		clock_t _dequeEnd;
 
 	public:
 		PmergeMe();
@@ -45,6 +48,7 @@ class PmergeMe
 		
 	class NegativeNumberException : public std::exception
 	{
+		public:
 		virtual const char *what() const throw()
 		{
 			return("Negative Numbers");
@@ -53,6 +57,7 @@ class PmergeMe
 	
 	class OverflowException : public std::exception
 	{
+		public:
 		virtual const char *what() const throw()
 		{
 			return("Overflow Number");
@@ -61,6 +66,7 @@ class PmergeMe
 
 	class BadImputException : public std::exception
 	{
+		public:
 		virtual const char *what() const throw()
 		{
 			return("Wrong Imput");
@@ -69,9 +75,19 @@ class PmergeMe
 
 	class DuplicateNumbersException : public std::exception
 	{
+		public:
 		virtual const char *what() const throw()
 		{
 			return("Duplicate Numbers");
+		}
+	};
+
+	class IsSortedException : public std::exception
+	{
+		public:
+		virtual const char *what() const throw()
+		{
+			return("The numbers are already sorted");
 		}
 	};
 	
@@ -88,7 +104,7 @@ class PmergeMe
 	void sortList();
 	void splitList();
 	void orderRightLeftList();
-	int	 isSortList(std::list<int> list);
+	int isSortList(std::list<int> list);
 	void printList(std::list<int> list);
 	void  addList(int num);
 	

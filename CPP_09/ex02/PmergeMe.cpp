@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 08:14:53 by correia           #+#    #+#             */
-/*   Updated: 2024/06/06 10:20:40 by correia          ###   ########.fr       */
+/*   Updated: 2024/06/06 18:38:42 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,31 +41,35 @@ PmergeMe::PmergeMe(char **imput)
 		for(size_t j = 0; imput[i][j]; j++)
 		{
 			if(!isdigit(imput[i][j]) && imput[i][j] != '-' && imput[i][j] != '+')
-				throw BadImputException();
+				throw PmergeMe::BadImputException();
 		}
 		int num = atoi(imput[i]);
 		if(num < 0)
-			throw NegativeNumberException();
+			throw PmergeMe::NegativeNumberException();
 		else if (num > 2147483647)
-			throw OverflowException();
-
+			throw PmergeMe::OverflowException();
+			
 		addList(num);
 		addDeque(num);
 	}
+	
+	if(isSortList(_list))
+		throw PmergeMe::IsSortedException();
 
 }
+
 
 void PmergeMe::addList(int num)
 {
 	if(std::find(_list.begin(), _list.end(), num) != _list.end())
-		throw (DuplicateNumbersException());
+		throw PmergeMe::DuplicateNumbersException();
 	_list.push_back(num);
 } 
 
 void PmergeMe::addDeque(int num)
 {
 	if(std::find(_deque.begin(), _deque.end(), num) != _deque.end())
-		throw (DuplicateNumbersException());
+		throw PmergeMe::DuplicateNumbersException();
 	_deque.push_back(num);
 }
 
@@ -74,17 +78,23 @@ void PmergeMe::FordJohnson()
 
 	std::cout << "Before: ";
 	printList(_list);
-	
+	_listStart = clock();
 	sortList();
+	_listEnd = clock();
 	std::cout << "After : ";
 	printList(_finalList);
 
-	std::cout << "*********************" << std::endl;
-	std::cout << "Before: ";
-	printDeque(_deque);
+	_dequeStart = clock();
 	sortDeque();
-	std::cout << "After : ";
-	printDeque(_finalDeque);
+	_dequeEnd = clock();
+	
+	double timeList = (double(_listEnd - _listStart) / CLOCKS_PER_SEC ) * 1000;
+	double timeDeque = (double(_dequeEnd - _dequeStart) / CLOCKS_PER_SEC ) * 1000;
+	
+	std::cout << "Time to process a range of " << _list.size() << "elements with std::list : ";
+	std::cout << timeList << " miliseconds" << std::endl;
+	std::cout << "Time to process a range of " << _list.size() << "elements with std::deque : ";
+	std::cout << timeDeque << " miliseconds" << std::endl;
 	
 }
 void PmergeMe::sortDeque()
@@ -318,9 +328,9 @@ void PmergeMe::orderRightLeftList()
 
 int PmergeMe::isSortList(std::list<int> list)
 {
-	std::list<int>::iterator it = list.begin();
-	std::list<int>::iterator nextIt = list.begin();
-	++nextIt;
+	std::list<int>::const_iterator it = list.begin();
+	std::list<int>::const_iterator nextIt = list.begin();
+	nextIt++;
 	
 	while(nextIt != list.end())
 	{
@@ -340,4 +350,4 @@ void PmergeMe::printList(std::list<int> list)
 	}
 	std::cout << std::endl;
 }
- 
+
