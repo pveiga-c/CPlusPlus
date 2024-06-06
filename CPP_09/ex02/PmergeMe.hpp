@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 08:13:54 by correia           #+#    #+#             */
-/*   Updated: 2024/06/05 20:42:24 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/06/06 10:18:37 by correia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,11 @@ class PmergeMe
 		std::list<int> _rightList;
 		std::list<int> _leftList;
 		
-
-		
 		std::deque<int> _deque;
+		std::deque<int> _finalDeque;
+		std::deque<int> _rightDeque;
+		std::deque<int> _leftDeque;
+	
 		
 
 	public:
@@ -73,22 +75,22 @@ class PmergeMe
 		}
 	};
 	
+	
+	void FordJohnson();
+	
+	void sortDeque();
+	void splitDeque();
+	void orderRightLeftDeque();
+	int  isSortDeque(std::deque<int> deque);
+	void printDeque(std::deque<int> deque);
+	void addDeque(int num);
+	 
+	void sortList();
 	void splitList();
 	void orderRightLeftList();
-	
-	void addList(int num);
-	void addDeque(int num);
-	void FordJohnson();
-	void sortList();
-	void makePair(std::list<int>::iterator it, std::list<int>::iterator nextIt);
-	int isSort(std::list<int> list);
-	void orderPair(std::list<std::pair<int,int> >::iterator pairIt, std::list<std::pair<int,int> >::iterator nextPairIt);
+	int	 isSortList(std::list<int> list);
 	void printList(std::list<int> list);
-	void printPairList();
-
-
-
-
+	void  addList(int num);
 	
 };
 

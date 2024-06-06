@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 13:57:34 by correia           #+#    #+#             */
-/*   Updated: 2024/06/05 19:23:16 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/06/06 10:18:01 by correia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int main(int argc, char **argv)
 	{
 		PmergeMe a(argv + 1);
 		a.FordJohnson();
-	}
+ 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
