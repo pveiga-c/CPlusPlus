@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/02 09:40:34 by correia           #+#    #+#             */
-/*   Updated: 2024/06/06 20:51:13 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/06/12 18:55:00 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,10 @@ class RPN
 {
 	private:
 		std::stack<double> _mathPolish;
-		int operandcouter;
-		int operatorcouter;
 		std::string _digitStr;
+		int _operatorcouter;
+		int _operandcouter;
 		int _digitNum;
-		// double _result; 
-		
 
 	public:
 		RPN();
@@ -37,25 +35,20 @@ class RPN
 		RPN(const RPN& copy);
 		RPN& operator=(const RPN& copy);
 		
-		void mathPolish(std::string imput);
+		void mathPolish(std::string input);
+		void checkError(std::string input);
 
-	class BadImputException : public std::exception
+	class BadInputException : public std::exception
 	{
 		public:
 		virtual const char *what() const throw()
 		{
-			return("Error");
+			return("Error\n");
 		}
 	};
 
-	double makeoperation(double firstNumber, double secundNumber, char imput);
-/* 
-		void fillStack (const std::string imput);
-		bool checkOperator (const char ImputOperator);
-		void calculatRpn();
-		void opr(const std::string imput, size_t i); */
-
-		
+	double makeoperation(double firstNumber, double secundNumber, char input);
+	
 };
 
 #endif

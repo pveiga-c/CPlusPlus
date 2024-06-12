@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 13:59:50 by correia           #+#    #+#             */
-/*   Updated: 2024/06/12 09:42:42 by correia          ###   ########.fr       */
+/*   Updated: 2024/06/12 18:13:19 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ class BitcoinExchange
 		void checkFileCsv(const std::string buf);
 		
 		void parsingTxt(char *path);
-		float checkPriceTxt(std::string priceStr);
+	//	float checkPriceTxt(std::string priceStr);
 		int checkDateTxt(std::string& date, tm& time);
 		void checkFileTxt(const std::string buf);
 

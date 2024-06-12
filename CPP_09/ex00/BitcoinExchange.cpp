@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 14:04:42 by correia           #+#    #+#             */
-/*   Updated: 2024/06/12 10:18:55 by correia          ###   ########.fr       */
+/*   Updated: 2024/06/12 18:31:43 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,9 @@ void BitcoinExchange::checkFileCsv(const std::string buf)
 	commaPos = buf.find(',');
 	std::string date(buf.substr(0, commaPos));
 	checkDateCsv(date, time);
+	
 	std::string priceStr(buf.substr(commaPos + 1));
-	double price = checkPriceCsv(priceStr);
+	float price = checkPriceCsv(priceStr);
 	_bitcoinMap[date] = price;
 }
 
@@ -127,63 +128,65 @@ void BitcoinExchange::parsingTxt(char *path)
 
 void BitcoinExchange::checkFileTxt(const std::string buf)
 {
+	std::map<std::string, float>::iterator lowerDate;
 	size_t pipePos;
 	tm time;
-	std::map<std::string, float>::iterator lowerDate;
 	float multiplier;
 	float result;
 	
 	size_t pipeCout = std::count(buf.begin(), buf.end(), '|');
 	
 	if(pipeCout != 1)
-		throw BitcoinExchange::InvalidPrice("Error : Format invalid");
-	
-	pipePos = buf.find('|');
-	std::string date(buf.substr(0, pipePos));
-	
-	if(!checkDateTxt(date, time))
+		std::cout << "Error: bad input => " << buf << std::endl;
+	else 
 	{
-		std::string multiplierStr(buf.substr(pipePos + 1));
-		std::istringstream ss(multiplierStr);
-		ss >> multiplier;
+		pipePos = buf.find('|');
+		std::string date(buf.substr(0, pipePos));
 		
-		if (multiplier < 0)
-			std::cout << "Error: not a positive number." << std::endl;
-		else if (multiplier > 1000)
-			std::cout << "Error: too large a number." << std::endl;
-		else
+		if(checkDateTxt(date, time))
 		{
-			lowerDate = _bitcoinMap.lower_bound(date);
-			if(lowerDate->first != date)
-				--lowerDate;
-			result = lowerDate->second * multiplier;
-			std::cout << date << " => " << multiplier << " = " <<  result << std::endl;
+			std::string multiplierStr(buf.substr(pipePos + 1));
+			std::istringstream ss(multiplierStr);
+			ss >> multiplier;
+			
+			if (multiplier < 0)
+				std::cout << "Error: not a positive number." << std::endl;
+			else if (multiplier > 1000)
+				std::cout << "Error: too large a number." << std::endl;
+			else
+			{
+				lowerDate = _bitcoinMap.lower_bound(date);
+				if(lowerDate->first != date)
+					--lowerDate;
+				result = lowerDate->second * multiplier;
+				std::cout << date << " => " << multiplier << " = " <<  result << std::endl;
+			}
 		}
+		else
+			std::cout << "Error: bad input => " << date << std::endl;
 	}
-	else
-		std::cout << "Error: bad input => " << date << std::endl;
 }
 
 
 int BitcoinExchange::checkDateTxt(std::string& date, tm& time)
 {
 	memset(&time, 0, sizeof(struct tm));
-	int flag = 0;
+	int flag = 1;
 
 	if(std::sscanf(date.c_str(), "%d-%d-%d", &time.tm_year, &time.tm_mon, &time.tm_mday) != 3)
-		flag = 1;
+		flag = 0;
 	if(time.tm_year < 2009)
-		flag = 1;
+		flag = 0;
 	if(time.tm_mon < 1 || time.tm_mon > 12)
-		flag = 1;
+		flag = 0;
 	if(time.tm_mon == 2 && time.tm_year % 4 != 0 && time.tm_mday > 28)
-		flag = 1;
+		flag = 0;
 	if(time.tm_mon == 2 && time.tm_year % 4 == 0 && time.tm_mday > 29)
-		flag = 1;
+		flag = 0;
 	if((time.tm_mon == 4 || time.tm_mon == 6 || time.tm_mon == 9 || time.tm_mon == 11) && time.tm_mday > 30)
-		flag = 1;
+		flag = 0;
 	if((time.tm_mon == 1 || time.tm_mon == 3 || time.tm_mon == 5 || time.tm_mon == 7 || time.tm_mon == 8 || time.tm_mon == 10 || time.tm_mon == 12) && time.tm_mday > 31)
-		flag = 1;
+		flag = 0;
 	return (flag);
 }
 

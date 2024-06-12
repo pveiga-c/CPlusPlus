@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 08:39:38 by correia           #+#    #+#             */
-/*   Updated: 2024/05/16 17:28:19 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/06/12 18:37:59 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,6 +161,6 @@ void ScalarConverter::convert(std::string str)
 		printInf(str);
 	}
 	else if(eType == INVALID)
-		std::cout << "Imput Invalido" << std::endl;
+		std::cout << "input Invalido" << std::endl;
 
 }

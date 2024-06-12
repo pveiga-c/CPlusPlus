@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 08:14:53 by correia           #+#    #+#             */
-/*   Updated: 2024/06/06 18:38:42 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/06/12 19:10:56 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,16 +34,16 @@ PmergeMe& PmergeMe::operator=(const PmergeMe& copy)
 }
 
 
-PmergeMe::PmergeMe(char **imput)
+PmergeMe::PmergeMe(char **input)
 {
-	for (int i = 0; imput[i]; i++)
+	for (int i = 0; input[i]; i++)
 	{
-		for(size_t j = 0; imput[i][j]; j++)
+		for(size_t j = 0; input[i][j]; j++)
 		{
-			if(!isdigit(imput[i][j]) && imput[i][j] != '-' && imput[i][j] != '+')
-				throw PmergeMe::BadImputException();
+			if(!isdigit(input[i][j]) && input[i][j] != '-' && input[i][j] != '+')
+				throw PmergeMe::BadInputException();
 		}
-		int num = atoi(imput[i]);
+		int num = atoi(input[i]);
 		if(num < 0)
 			throw PmergeMe::NegativeNumberException();
 		else if (num > 2147483647)
@@ -75,7 +75,8 @@ void PmergeMe::addDeque(int num)
 
 void PmergeMe::FordJohnson()
 {
-
+	int size = _list.size();
+	
 	std::cout << "Before: ";
 	printList(_list);
 	_listStart = clock();
@@ -91,9 +92,9 @@ void PmergeMe::FordJohnson()
 	double timeList = (double(_listEnd - _listStart) / CLOCKS_PER_SEC ) * 1000;
 	double timeDeque = (double(_dequeEnd - _dequeStart) / CLOCKS_PER_SEC ) * 1000;
 	
-	std::cout << "Time to process a range of " << _list.size() << "elements with std::list : ";
+	std::cout << "Time to process a range of " << size << " elements with std::list  : ";
 	std::cout << timeList << " miliseconds" << std::endl;
-	std::cout << "Time to process a range of " << _list.size() << "elements with std::deque : ";
+	std::cout << "Time to process a range of " << size << " elements with std::deque : ";
 	std::cout << timeDeque << " miliseconds" << std::endl;
 	
 }
@@ -268,32 +269,26 @@ void PmergeMe::sortList()
 		
 	}
 }
-
 void PmergeMe::splitList()
 {
-	size_t i = 0;
 	size_t size = _list.size();
+	size_t halfSize = size / 2;
 	std::list<int>::iterator itList = _list.begin();
 
-	while(itList != _list.end())
+	for (size_t i = 0; i < halfSize; ++i)
 	{
-		while(i < size / 2)
-		{
-			_leftList.push_back(*itList);
-			++itList;
-			_list.pop_front();
-			i++;
-		}
-		while(i != size)
-		{
-			_rightList.push_back(*itList);
-			++itList;
-			_list.pop_front();
-			i++;
-		}
+		_leftList.push_back(*itList);
 		++itList;
 	}
+
+	for (size_t i = halfSize; i < size; ++i)
+	{
+		_rightList.push_back(*itList);
+		++itList;
+	}
+	_list.clear();
 }
+
 void PmergeMe::orderRightLeftList()
 {
 	while(!isSortList(_leftList))

@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 13:57:34 by correia           #+#    #+#             */
-/*   Updated: 2024/06/06 19:25:13 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/06/12 18:53:04 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main(int argc, char **argv)
 {
 	if(argc == 1)
 	{
-		std::cout << "Invalids Imputs" << std::endl;
+		std::cout << "Invalids inputs" << std::endl;
 		return(1);
 	}
 	if(argc == 2)
@@ -28,9 +28,9 @@ int main(int argc, char **argv)
 	
 	try
 	{
-		PmergeMe a(argv + 1);
+		PmergeMe merge(argv + 1);
 		
-		a.FordJohnson();
+		merge.FordJohnson();
 
  	}
 	catch(const std::exception& e)

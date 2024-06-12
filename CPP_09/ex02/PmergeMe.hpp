@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 08:13:54 by correia           #+#    #+#             */
-/*   Updated: 2024/06/06 18:31:53 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/06/12 19:11:49 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ class PmergeMe
 		std::list<int> _finalList;
 		std::list<int> _rightList;
 		std::list<int> _leftList;
+		
 		clock_t _listStart;
 		clock_t _listEnd;
 		
@@ -41,7 +42,7 @@ class PmergeMe
 
 	public:
 		PmergeMe();
-		PmergeMe(char **imput);
+		PmergeMe(char **input);
 		~PmergeMe();
 		PmergeMe(const PmergeMe& copy);
 		PmergeMe& operator=(const PmergeMe& copy);
@@ -51,7 +52,8 @@ class PmergeMe
 		public:
 		virtual const char *what() const throw()
 		{
-			return("Negative Numbers");
+			//return("Negative Numbers");
+			return("Error");
 		}
 	};
 	
@@ -64,12 +66,12 @@ class PmergeMe
 		}
 	};
 
-	class BadImputException : public std::exception
+	class BadInputException : public std::exception
 	{
 		public:
 		virtual const char *what() const throw()
 		{
-			return("Wrong Imput");
+			return("Wrong input");
 		}
 	};
 
@@ -104,7 +106,7 @@ class PmergeMe
 	void sortList();
 	void splitList();
 	void orderRightLeftList();
-	int isSortList(std::list<int> list);
+	int  isSortList(std::list<int> list);
 	void printList(std::list<int> list);
 	void  addList(int num);
 	
