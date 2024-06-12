@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 14:04:42 by correia           #+#    #+#             */
-/*   Updated: 2024/06/03 16:48:59 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/06/12 10:18:55 by correia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ void BitcoinExchange::parsingCsv()
 	std::string buf;
 
 	if(fileCsv.fail())
-		throw OpeningFile();
+		throw BitcoinExchange::OpeningFile();
+		
 	std::getline(fileCsv, buf);
 	while(!fileCsv.eof())
 	{
@@ -55,6 +56,11 @@ void BitcoinExchange::checkFileCsv(const std::string buf)
 	size_t commaPos;
 	tm time;
 	
+	size_t commaCout = std::count(buf.begin(), buf.end(), ',');
+	
+	if(commaCout != 1)
+		throw BitcoinExchange::InvalidPrice("Error : Format invalid");
+		
 	commaPos = buf.find(',');
 	std::string date(buf.substr(0, commaPos));
 	checkDateCsv(date, time);
@@ -103,11 +109,13 @@ void BitcoinExchange::parsingTxt(char *path)
 	std::string buf;
 
 	if(fileTxt.fail())
-		throw OpeningFile();
+		throw BitcoinExchange::OpeningFile();
 	
 	while(!fileTxt.eof())
 	{
 		std::getline(fileTxt, buf);
+		if(buf == "date | value")
+			continue;
 		checkFileTxt(buf);
 		if(fileTxt.eof())
 			break;
@@ -119,19 +127,23 @@ void BitcoinExchange::parsingTxt(char *path)
 
 void BitcoinExchange::checkFileTxt(const std::string buf)
 {
-	size_t commaPos;
+	size_t pipePos;
 	tm time;
 	std::map<std::string, float>::iterator lowerDate;
 	float multiplier;
 	float result;
 	
+	size_t pipeCout = std::count(buf.begin(), buf.end(), '|');
 	
-	commaPos = buf.find('|');
-	std::string date(buf.substr(0, commaPos));
+	if(pipeCout != 1)
+		throw BitcoinExchange::InvalidPrice("Error : Format invalid");
+	
+	pipePos = buf.find('|');
+	std::string date(buf.substr(0, pipePos));
 	
 	if(!checkDateTxt(date, time))
 	{
-		std::string multiplierStr(buf.substr(commaPos + 1));
+		std::string multiplierStr(buf.substr(pipePos + 1));
 		std::istringstream ss(multiplierStr);
 		ss >> multiplier;
 		

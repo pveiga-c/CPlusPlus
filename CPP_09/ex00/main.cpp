@@ -6,7 +6,7 @@
 /*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 13:57:34 by correia           #+#    #+#             */
-/*   Updated: 2024/06/02 09:27:47 by correia          ###   ########.fr       */
+/*   Updated: 2024/06/12 09:43:33 by correia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ int main(int argc, char **argv)
 
 	try
 	{
-		BitcoinExchange a;
-		a.parsingCsv();
-		a.parsingTxt(argv[1]);
+		BitcoinExchange bit;
+		bit.parsingCsv();
+		bit.parsingTxt(argv[1]);
 	}
 	catch(const std::exception& e)
 	{
