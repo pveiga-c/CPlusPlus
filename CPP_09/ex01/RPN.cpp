@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/02 09:43:04 by correia           #+#    #+#             */
-/*   Updated: 2024/06/12 18:54:52 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2024/06/13 12:03:57 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ RPN& RPN::operator=(const RPN& copy)
 
 void RPN::mathPolish(std::string input)
 {
-	//std::cout << input <<std::endl;
+	std::cout << input <<std::endl;
 	int i = 0;
 	
 	checkError(input);
